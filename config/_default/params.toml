@@ -1,0 +1,27 @@
+
+[home]
+    sections = ["apps","news"]
+    fullCover = false
+    centerHeadline = false
+    style = ""
+    [home.feature]
+        orientation = "horizontal"
+        color = "success"
+        width = 4
+        align = "center"
+
+[navigation]
+    logo = "/img/SV-1-1.svg"
+
+[sections]
+    [sections.apps]
+        # title = "My crafted apps"
+        # layout = "nav"
+        sort = "weight"
+        header = "none"
+        ratio = "4x3"
+    [sections.news]
+        title = "News about me and my crafts"
+
+[sharing]
+    enabled = false

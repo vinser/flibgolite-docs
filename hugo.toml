@@ -1,0 +1,5 @@
+baseURL = 'https://vinser.github.io/'
+languageCode = 'en-us'
+title = 'My Hugo Hinode Site'
+[[module.imports]]
+path = 'github.com/gethinode/hinode'
