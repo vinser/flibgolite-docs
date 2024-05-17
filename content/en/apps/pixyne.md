@@ -23,6 +23,8 @@ Pixyne application has a simple and intuitive interface:
 * Changes will not be applied until you save. Pixyne automaticaly stores the current state of the folder so you can undo changes at any time. This is useful when working with a large number of photos and you need to close the application in order to continue working later and resume from the same place.   
 
 __All you have to do is to download, install and start it.__    
-Detailed instructions on how to do this can be found on the {{< link pixyne_docs >}}product website{{< /link >}}  
+<!-- commented buggy hinode link -->
+<!-- Detailed instructions on how to do this can be found on the {{< link pixyne_docs >}}product website{{< /link >}}   -->
+Detailed instructions on how to do this can be found on the [product website ](https://vinser.github.io/pixyne/)
 
 Enjoy!  
