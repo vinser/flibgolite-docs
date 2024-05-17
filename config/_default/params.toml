@@ -1,3 +1,6 @@
+[main]
+    externalLinks.cue = true
+    externalLinks.tab = true
 
 [home]
     sections = ["apps","news"]
@@ -25,3 +28,11 @@
 
 [sharing]
     enabled = false
+
+[links]
+    flibgolite_site = "https://github.com/vinser/flibgolite"
+    pixyne_site = "https://github.com/vinser/pixyne"
+    burnfix_site = "https://github.com/vinser/burnfix"
+    flibgolite_docs = "https://vinser.github.io/flibgolite"
+    pixyne_docs = "https://vinser.github.io/pixyne"
+    burnfix_docs = "https://vinser.github.io/burnfix"
