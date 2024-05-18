@@ -24,8 +24,6 @@ __FLibGoLite__ OPDS catalog has been tested and works with mobile book reader ap
 __FLibGoLite__ program is written in GO as a single executable file and doesn't require any prereqiusites.
 
 __All you have to do is to download, install and start it.__    
-<!-- commented buggy hinode link -->
-<!-- Detailed instructions on how to do this can be found on the {{< link flibgolite_docs >}}product website{{< /link >}}   -->
-Detailed instructions on how to do this can be found on the [product website ](https://vinser.github.io/flibgolite/)
+Detailed instructions on how to do this can be found on the {{< link url=flibgolite_site external=true >}}product website{{< /link >}}  
 
 Enjoy!  

@@ -30,9 +30,9 @@
     enabled = false
 
 [links]
-    flibgolite_site = "https://github.com/vinser/flibgolite"
-    pixyne_site = "https://github.com/vinser/pixyne"
-    burnfix_site = "https://github.com/vinser/burnfix"
-    flibgolite_docs = "https://vinser.github.io/flibgolite"
-    pixyne_docs = "https://vinser.github.io/pixyne"
-    burnfix_docs = "https://vinser.github.io/burnfix"
+    flibgolite_project = "https://github.com/vinser/flibgolite"
+    pixyne_project = "https://github.com/vinser/pixyne"
+    burnfix_project = "https://github.com/vinser/burnfix"
+    flibgolite_site = "https://vinser.github.io/flibgolite"
+    pixyne_site = "https://vinser.github.io/pixyne"
+    burnfix_site = "https://vinser.github.io/burnfix"
