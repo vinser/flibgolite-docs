@@ -1,4 +1,4 @@
-baseURL = 'https://vinser.github.io/'
+baseURL = 'https://vinser.github.io/hugo-hinode'
 languageCode = 'en-us'
 title = 'My Hugo Hinode Site'
 [[module.imports]]
