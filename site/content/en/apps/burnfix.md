@@ -20,6 +20,6 @@ This application can attempt to get rid of this effect on your LCD, LED or plasm
 
 Moreover, burnfix can show full-screen images of various colors to help you identify defects in the display matrix.   
 
-Detailed instructions on how to do this can be found on the {{< link url=burnfix_site external=true >}}product website{{< /link >}}  
+Detailed instructions on how to do this can be found on the {{< link href=burnfix_site external=true >}}product website{{< /link >}}  
 
 Enjoy!  

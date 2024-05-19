@@ -71,6 +71,11 @@
     {{ end }}
 {{ end }}
 
+{{ if and $external (not (hasPrefix $url "http")) }}
+    {{ errorf "External link must start with 'http': %s" .Position -}}
+    {{ $error = true -}}
+{{ end }}
+
 {{- $isExternal := or (ne (urls.Parse (absURL $url)).Host (urls.Parse site.BaseURL).Host) $external -}}
 {{- if not $isExternal -}}
     {{ $ref := partial "utilities/GetPage.html" (dict "url" $url "page" .Page) }}

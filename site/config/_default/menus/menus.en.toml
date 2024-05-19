@@ -1,0 +1,22 @@
+[[main]]
+  name = "Apps"
+  pageRef = "/apps/"
+  weight = 20
+
+[[main]]
+  name = "News"
+  pageRef = "/news/"
+  weight = 30
+
+[[social]]
+  name = "GitHub"
+  pre = "fab fa-github"
+  url = "https://github.com/vinser"
+  weight = 20
+
+[[social]]
+  name = "FlatHub"
+  pre = "fab medium"
+  url = "https://flathub.org/apps/search?q=vinser/"
+  weight = 30
+

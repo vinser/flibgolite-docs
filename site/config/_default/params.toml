@@ -1,6 +1,7 @@
 [main]
-    externalLinks.cue = true
-    externalLinks.tab = true
+    [main.externalLinks]
+        cue = true
+        tab = true
 
 [home]
     sections = ["apps","news"]
@@ -27,7 +28,11 @@
         title = "News about me and my crafts"
 
 [sharing]
-    enabled = false
+    enabled = true
+
+[minify]
+  [minify.tdewolff.html]
+    keepWhitespace = true
 
 [links]
     flibgolite_project = "https://github.com/vinser/flibgolite"
@@ -36,3 +41,4 @@
     flibgolite_site = "https://vinser.github.io/flibgolite"
     pixyne_site = "https://vinser.github.io/pixyne"
     burnfix_site = "https://vinser.github.io/burnfix"
+    # burnfix_site = "burnfix"
