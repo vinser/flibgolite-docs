@@ -66,7 +66,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_path }}/" \
+            --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --source ./site
 
                       
