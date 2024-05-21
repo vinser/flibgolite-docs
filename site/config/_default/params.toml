@@ -5,7 +5,7 @@
 
 [home]
     sections = ["apps","news"]
-    fullCover = false
+    fullCover = true
     centerHeadline = false
     style = ""
     [home.feature]
