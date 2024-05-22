@@ -3,7 +3,7 @@
 	"file": "main.css",
 	"sourceRoot": "/home/vinser/Dev/Sites/hugo-hinode/site",
 	"sources": [
-		"scss/bundle-1716307943651167834.scss",
+		"scss/bundle-1716365137738945559.scss",
 		"hugo:vars",
 		"../../../../.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gethinode/hinode@v0.23.21/assets/scss/common/_variables.scss",
 		"../../../../.cache/hugo_cache/modules/filecache/modules/pkg/mod/github.com/gethinode/hinode@v0.23.21/assets/scss/theme/_variables.scss",
