@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News on My Hugo Hinode Site</title>
-    <link>http://localhost:1313/hugo-hinode/news/</link>
+    <link>https://vinser.github.io/hugo-hinode/news/</link>
     <description>Recent content in News on My Hugo Hinode Site</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/hugo-hinode/news/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vinser.github.io/hugo-hinode/news/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
