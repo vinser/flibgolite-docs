@@ -1,10 +1,10 @@
 [[main]]
-  name = "Apps"
+  name = "Приложения"
   pageRef = "apps/"
   weight = 20
 
 [[main]]
-  name = "News"
+  name = "Новости"
   pageRef = "news/"
   weight = 30
 

@@ -1,0 +1,153 @@
+# Single pages
+- id: postedOnDate
+  translation: "Опубликовано {{ . }}"
+- id: lastModified
+  translation: "Изменено {{ . }}"
+- id: read
+  translation: "read"
+- id: minutesShort
+  translation: "мин"
+- id: words
+  translation: "слов"
+- id: photoFull
+  translation: "Автор фото %s из %s"
+- id: photoShort
+  translation: "Автор фото {{ . }}"
+- id: photoOn
+  translation: "из"
+- id: draft
+  translation: "Черновик"
+
+# List pages
+- id: article
+  translation: "Статья"
+- id: articles
+  translation: "Статьи"
+- id: more
+  translation: "Еще {{ . }}"
+- id: emptyList
+  translation: "Статьи не найдены"
+- id: emptyTags
+  translation: "Теги не найдены"
+- id: readMore
+  translation: "Читать далее"
+
+# Languages
+- id: lang_de
+  translation: "Немецкий"
+- id: lang_en
+  translation: "Английский"
+- id: lang_nl
+  translation: "Голландский"
+- id: lang_fr
+  translation: "Французский"
+- id: lang_ru
+  translation: "Русский"
+
+# Sharing
+- id: shareLink
+  translation: "Поделиться через {{ . }}"
+- id: shareSystem
+  translation: "система"
+- id: copyToClipboard
+  translation: "скопировать в буфер обмена"
+- id: copiedToClipboard
+  translation: "скопировано в буфер обмена"
+- id: link
+  translation: "Ссылка"
+- id: code
+  translation: "Код"
+- id: download
+  translation: "Загрузить статью"
+
+# Pagination
+- id: paginationNav
+  translation: "Навигация по страницам"
+- id: paginationPrevious
+  translation: "Предыдущая страница"
+- id: paginationNext
+  translation: "Следующая страница"
+- id: paginationFirst
+  translation: "Первая страница"
+- id: paginationLast
+  translation: "Последняя страница"
+
+# Navigation
+- id: colorMode
+  translation: "Переключить цветовую схему"
+- id: colorLight
+  translation: "Светлая"
+- id: colorDark
+  translation: "Темная"
+- id: colorAuto
+  translation: "Авто"
+- id: toggleMainNav
+  translation: "Показать навигацию"
+- id: home
+  translation: "Домашняя"
+- id: languageSwitcherLabel
+  translation: "Язык"
+- id: close
+  translation: "Закрыть"
+
+# Table of contents
+- id: toc
+  translation: "На этой странице"
+- id: seeAlso
+  translation: "Смотреть также"
+- id: sectionMenu
+  translation: "Выбрать тему"
+
+# Sidebar
+- id: toggleSidebar
+  translation: "Переключить сайдбар"
+
+# Feature
+- id: addedFeature
+  translation: "Добавлено {{ . }}"
+- id: deprecatedFeature
+  translation: "Устарело {{ . }}"
+
+# Versioning
+- id: latest
+  translation: "последняя"
+- id: allVersions
+  translation: "Все версии"
+- id: newerVersionAlert
+  translation: "Есть новая версия {{ . }}!"
+
+# 404 page
+- id: pageNotFound
+  translation: "Страница, которую вы ищете, не найдена. Попробуйте вернуться на {{ . }}."
+- id: pageNotFoundTitle
+  translation: "Страница не найдена"
+- id: pageNotFoundHome
+  translation: "Домашняя страница"
+
+# Footer
+- id: copyright
+  translation: "Copyright"
+- id: rights
+  translation: "All rights reserved"
+- id: poweredBy
+  translation: "Powered by {{ . }}."
+
+# Comments
+- id: show
+  translation: "Показать"
+- id: comments
+  translation: "Комментарии" 
+
+# Arguments
+- id: name
+  translation: "Название"
+- id: type
+  translation: "Тип"
+- id: required 
+  translation: "Обязательно"
+- id: default
+  translation: "Умолчание"
+- id: comment
+  translation: "Комментарий"
+- id: supportedValues
+  translation: "Возможные значения"

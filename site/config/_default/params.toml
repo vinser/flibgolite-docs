@@ -3,19 +3,19 @@
         cue = true
         tab = true
 
-[home]
-    sections = ["apps","news"]
-    fullCover = false
-    centerHeadline = false
-    style = ""
-    [home.feature]
-        orientation = "horizontal"
-        color = "success"
-        width = 4
-        align = "center"
+# [home]
+#     sections = ["apps","news"]
+#     fullCover = false
+#     centerHeadline = false
+#     style = ""
+#     [home.feature]
+#         orientation = "horizontal"
+#         color = "primary"
+#         width = 4
+#         align = "center"
 
 [navigation]
-    logo = "/img/SV-1-1.svg"
+    logo = "img/SV-1-1.svg"
 
 [sections]
     [sections.apps]
@@ -28,7 +28,7 @@
         title = "News about me and my crafts"
 
 [sharing]
-    enabled = true
+    enabled = false
 
 [minify]
   [minify.tdewolff.html]
