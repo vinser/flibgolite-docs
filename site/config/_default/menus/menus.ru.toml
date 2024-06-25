@@ -1,0 +1,56 @@
+[[main]]
+  name = "Документация"
+  pageRef = "/docs/введение"
+  weight = 20
+
+[[main]]
+  name = "Выпуски"
+  pageRef = "/releases/"
+  weight = 50
+
+# [[main]]
+#   name = "GitHub"
+#   pre = "fab fa-github"
+#   url = "https://github.com/vinser/flibgolite"
+#   weight = 60
+#   [main.params]
+#     icon = true
+      
+[[footer]]
+  name = "Ссылки"
+  weight = 10
+
+[[footer]]
+  parent = "Ссылки"
+  name = "Репозиторий"
+  pre = "fab fa-github"
+  url = "https://github.com/vinser/flibgolite"
+  weight = 10
+
+[[footer]]
+  parent = "Ссылки"
+  name = "Проблемы"
+  pre = "fas fa-bug"
+  url = "https://github.com/vinser/flibgolite/issues"
+  weight = 20
+
+[[footer]]
+  parent = "Ссылки"
+  pre = "fas fa-download"
+  name = "Загрузки"
+  url = "https://github.com/vinser/flibgolite/releases"
+  weight = 30
+
+[[footer]]
+  parent = "Ссылки"
+  pre = "fas fa-id-card"
+  name = "Про"
+  url = "https://vinser.github.io"
+  weight = 30
+
+# [[footer]]
+#   parent = "Ссылки"
+#   name = "Способствовать"
+#   pageRef = "/contribute"
+#   weight = 30
+

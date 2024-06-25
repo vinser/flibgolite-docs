@@ -1,0 +1,55 @@
+{{- $copyright := printf "%s © %s %s %s." (T "copyright") (dateFormat "2006" now) .Site.Title (T "rights") }}
+{{- $version := partial "latest.html" -}}
+{{- $license := .Site.Params.footer.license | safeHTML -}}
+{{- $description := .Site.Params.main.description | safeHTML -}}
+{{- $title := site.Title -}}
+{{ with .Site.GetPage "/_index" }}
+  {{ $description = .Params.description }}
+{{ end }}
+
+{{- $page := . -}}
+{{- if not $page -}}
+    {{- errorf "partial [footer/footer.html] - Missing value for param 'page'" -}}
+{{- end -}}
+
+{{- $menuName := "footer" }}
+{{- $menus := index site.Menus $menuName -}}
+{{- if or (ne (printf "%T" $menus) "navigation.Menu") (ne (index $menus 0).Menu $menuName) -}}
+    {{- errorf "partial [footer/footer.html] - Invalid value for param 'menus': %s" $menuName -}}
+{{- end -}}
+
+<footer class="container-fluid bg-primary bg-opacity-{{ .Site.Params.style.themeOpacity | default "25" | safeHTML }} p-0 border-top">
+    <div class="container-xxl px-3 px-xxl-0 py-3">
+        <div class="row">
+            <div class="col-md-4 small">
+                <div class="fs-md-5 fs-6 fw-bold footer-muted">{{ $title }}</div>
+                <div class="pt-3">{{ $description }}</div>
+                <div class="pt-2">{{ (T "latest") }} <a href='{{ $.Site.Params.links.repository_tag }}{{ $version }}' class='link-bg-footer fw-medium' target='_blank' rel='noopener noreferrer'>{{ $version }}</a></div>
+                <div class="pt-2">{{ cond (gt (len .Site.Copyright) 0) .Site.Copyright $copyright }}</div>
+                <div class="pt-2">{{ $license }}</div>
+            </div>
+            <div class="col-md-2 small">&nbsp</div>
+
+            {{- range $menu := $menus -}}
+                <div class="col-md-2 col-4 pt-5 pt-md-0 small">
+                    <div class="fs-md-5 fs-6 fw-bold footer-muted">{{ .Name }}</div>
+                    {{- range .Children -}}
+                        <div class="py-1">
+                            {{- partial "assets/navbar-item.html" (dict "menu" . "page" $page "class" "link-bg-footer") -}}
+                        </div>
+                    {{- end -}}
+                </div>
+            {{- end -}}
+            {{ if .Site.Params.main.endorse }}
+                {{ $link := partial "assets/link.html" (dict "destination" (index site.Params.links "hinode") "text" "Hinode" "class" "link-bg-footer" "page" .Page) }}
+                <div class="col-md-4 col-4 pt-5 pt-md-0 small">
+                    <div class="fs-md-5 fs-6 fw-bold footer-muted">&nbsp;</div>
+                    <div class="py-1">&nbsp;</div>
+                    <div class="py-1">&nbsp;</div>
+                    <div class="py-1">&nbsp;</div>
+                    <div class="py-1" align="right">{{ T "poweredBy" $link | safeHTML }}</div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</footer>

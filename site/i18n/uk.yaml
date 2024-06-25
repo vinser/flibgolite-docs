@@ -1,0 +1,161 @@
+# Single pages
+- id: postedOnDate
+  translation: "Опубліковано {{ . }}"
+- id: lastModified
+  translation: "Останні зміни {{ . }}"
+- id: read
+  translation: "Читати"
+- id: minutesShort
+  translation: "хв"
+- id: words
+  translation: "Слов"
+- id: photoFull
+  translation: "Знiмок %s від %s"
+- id: photoShort
+  translation: "Знiмок {{ . }}"
+- id: photoOn
+  translation: "від"
+- id: draft
+  translation: "Чернетка"
+
+# List pages
+- id: article
+  translation: "Стаття"
+- id: articles
+  translation: "Статті"
+- id: more
+  translation: "Більше {{ . }}"
+- id: emptyList
+  translation: "Немає статей"
+- id: emptyTags
+  translation: "Немає тегів"
+- id: readMore
+  translation: "Читати більше"
+
+# Languages
+- id: lang_de
+  translation: "German"
+- id: lang_en
+  translation: "English"
+- id: lang_nl
+  translation: "Dutch"
+- id: lang_fr
+  translation: "French"
+- id: lang_ru
+  translation: "Русский"
+- id: lang_uk
+  translation: "Українська"
+
+# Sharing
+- id: shareLink
+  translation: "Поділитися у {{ . }}"
+- id: shareSystem
+  translation: "Поділитися"
+- id: copyToClipboard
+  translation: "Копіювати в буфер обміну"
+- id: copiedToClipboard
+  translation: "Скопійовано до буферу обміну"
+- id: link
+  translation: "Посилання"
+- id: code
+  translation: "Код"
+- id: download
+  translation: "Завантажити"
+
+# Pagination
+- id: paginationNav
+  translation: "Навігація сторінками"
+- id: paginationPrevious
+  translation: "Попередня сторінка"
+- id: paginationNext
+  translation: "Наступна сторінка"
+- id: paginationFirst
+  translation: "Перша сторінка"
+- id: paginationLast
+  translation: "Остання сторінка"
+
+# Navigation
+- id: colorMode
+  translation: "Змінити тему"
+- id: colorLight
+  translation: "Светла"
+- id: colorDark
+  translation: "Темна"
+- id: colorAuto
+  translation: "Авто"
+- id: toggleMainNav
+  translation: "Змінити навігацію"
+- id: home
+  translation: "Домашня сторінка"
+- id: languageSwitcherLabel
+  translation: "Мова"
+- id: close
+  translation: "Закрити"
+
+# Table of contents
+- id: toc
+  translation: "Зміст"
+- id: seeAlso
+  translation: "Дивіться також"
+- id: sectionMenu
+  translation: "Выберіть секцію"
+
+# Sidebar
+- id: toggleSidebar
+  translation: "Показати/сховати сайдбар"
+
+# Feature
+- id: addedFeature
+  translation: "Додано в {{ . }}"
+- id: deprecatedFeature
+  translation: "Устаріло в {{ . }}"
+
+# Versioning
+- id: latest
+  translation: "Поточна версія"
+- id: allVersions
+  translation: "Усі версіі"
+- id: newerVersionAlert
+  translation: "Є нова версія {{ . }}!"
+
+# 404 page
+- id: pageNotFound
+  translation: "Сторінка, яку ви шукаєте, не існує або сталася інша помилка. Спробуйте повернутися до {{ . }}."
+- id: pageNotFoundTitle
+  translation: "Сторінку не знайдено"
+- id: pageNotFoundHome
+  translation: "Головна сторінка"
+
+# Footer
+- id: copyright
+  translation: "Copyright"
+- id: rights
+  translation: "All rights reserved"
+- id: poweredBy
+  translation: "Powered by {{ . }}."
+
+# Comments
+- id: show
+  translation: "Показати"
+- id: comments
+  translation: "Коментарі" 
+
+# Arguments
+- id: name
+  translation: "Ім'я"
+- id: type
+  translation: "Тип"
+- id: required 
+  translation: "Обов'язково"
+- id: default
+  translation: "За замовчуванням"
+- id: comment
+  translation: "Коментар"
+- id: supportedValues
+  translation: "Доступні значення"
+
+# Search
+- id: ui_search
+  translation: "Шукати на цьому сайті"
+- id: ui_no_results
+  translation: "Нічого не знайдено"

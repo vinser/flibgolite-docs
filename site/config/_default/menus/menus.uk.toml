@@ -1,0 +1,56 @@
+[[main]]
+  name = "Документація"
+  pageRef = "/docs/вступ"
+  weight = 20
+
+[[main]]
+  name = "Випускі"
+  pageRef = "/releases/"
+  weight = 50
+
+# [[main]]
+#   name = "GitHub"
+#   pre = "fab fa-github"
+#   url = "https://github.com/vinser/flibgolite"
+#   weight = 60
+#   [main.params]
+#     icon = true
+      
+[[footer]]
+  name = "Посилання"
+  weight = 10
+
+[[footer]]
+  parent = "Посилання"
+  name = "Репозиторій"
+  pre = "fab fa-github"
+  url = "https://github.com/vinser/flibgolite"
+  weight = 10
+
+[[footer]]
+  parent = "Посилання"
+  name = "Проблеми"
+  pre = "fas fa-bug"
+  url = "https://github.com/vinser/flibgolite/issues"
+  weight = 20
+
+[[footer]]
+  parent = "Посилання"
+  pre = "fas fa-download"
+  name = "Завантаження"
+  url = "https://github.com/vinser/flibgolite/releases"
+  weight = 30
+
+[[footer]]
+  parent = "Посилання"
+  pre = "fas fa-id-card"
+  name = "Про"
+  url = "https://vinser.github.io"
+  weight = 30
+
+# [[footer]]
+#   parent = "Посилання"
+#   name = "Свій внесок"
+#   pageRef = "/contribute"
+#   weight = 30
+

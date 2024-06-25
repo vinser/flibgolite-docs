@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" 
+width="72px" height="72px" viewBox="0 0 72 72" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<clipPath id="round-corners">
+    <rect x="0" y="0" width="72" height="72" rx="1"/>
+</clipPath>
+</defs>
+<g  transform="translate(1,1)" clip-path="url(#round-corners)">
+<path stroke="#757575" fill="#E04E3D" d="M 0 13 L 15 13 L 15 70 L 0 70 Z"/>
+<rect fill="#852d23" width="15" height="20" x="0" y="20"/> 
+<path stroke="#757575" fill="#F4AF11" d="M 16 13 L 25 13 L 25 70 L 16 70 Z"/> 
+<rect fill="#000000" width="9" height="20" x="16" y="50"/> 
+<path stroke="#757575" fill="#2E7384" d="M 26 13 L 35 13 L 35 70 L 26 70 Z"/> 
+<rect fill="rgba(255,255,255,0.702)" width="5" height="40" x="28" y="15"/> 
+<path stroke="#757575" fill="#A03F70" d="M 36 13 L 46 13 L 46 70 L 36 70 Z"/> 
+<rect fill="#F4AF11" width="5" height="10" x="38" y="55"/> 
+<path stroke="#757575" fill="#A03F70" d="M 47 12 L 70 0 L 70 52 L 47 69 Z"/>       
+<path stroke="black" fill="#d7d7d7" d="M 30 0 L 40 0 L 15 12 L 0 12 Z"/> 
+<path stroke="black" fill="#d7d7d7" d="M 41 0 L 49 0 L 25 12 L 16 12 Z"/> 
+<path stroke="black" fill="#d7d7d7" d="M 50 0 L 58 0 L 35 12 L 26 12 Z"/> 
+<path stroke="black" fill="#d7d7d7" d="M 59 0 L 68 0 L 46 12 L 36 12 Z"/> 
+<g transform="translate(-6,-1), scale(1.15)">
+<path fill="#ffffff" d="M 7 40 C 4 37 6 35 9 35 C 9 32 13 30 15 30 C 15 21 38 14 42 29 C 51 25 53 31 55 34 C 59 33 64 36 64 40 Z"/>
+<path opacity=".5" d="M 7 40 C 9 41 11 43 11 41 C 13 44 20 46 20 42 C 38 50 45 46 45 42 C 49 45 55 47 56 41 C 59 42 65 42 64 40 Z"/>
+</g>
+</g>
+</svg>

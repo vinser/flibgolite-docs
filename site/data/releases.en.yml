@@ -1,0 +1,44 @@
+# This file holds all entries for the release timeline
+
+
+- title: Enhancement in book stock directory structure
+  icon: fas screwdriver-wrench
+  color: secondary
+  date: 2022-09-05
+  badge: v1.1.0
+  url: v1.1.0
+  content:
+    Book stock directory don't contain new folder now by default. New acquired books should be placed in STOCK_DIR. 
+    Backward compatible with previous separate folder for new books.
+    Logging enhancement
+
+- title: First production release
+  icon: fas flag
+  color: primary
+  date: 2022-07-11
+  badge: v1.0.0
+  url: v1.0.0
+  content:
+    EPUB indexing was added
+
+- title: Multilingual and documented
+  icon: fas screwdriver-wrench
+  color: secondary
+  date: 2022-06-03
+  badge: v0.2.0
+  url: v0.2.0
+  content:
+    Multilingual support and documentation have been significantly improved
+
+- title: First and working
+  icon: fas rocket
+  color: primary
+  date: 2022-05-27
+  badge: v0.1.0
+  url: v0.1.0
+  content:
+    The first release with cross compiled binaries. It was fully refactored from FLibGo project that is now archived.
+    The purpose of the refactoring was to create a service consisting of a single executable file that did not require 
+    additional installation and configuration of the DBMS. This has significantly simplified the installation and 
+    configuration of the service and allows the user to do this easily and quickly.
+

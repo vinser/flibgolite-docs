@@ -1,0 +1,6 @@
+# This file holds all menu entries for the docs sidebar
+- title: Вступ
+- title: Інструкція користувача
+- title: Розширений посібник
+- title: Використання Docker
+
