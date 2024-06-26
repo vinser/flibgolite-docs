@@ -1,3 +1,3 @@
 # flibgolite-docs
 
-Docs on [FLibGoLite](https://github.com/vinser/flibgolite) 
+Docs for [FLibGoLite](https://github.com/vinser/flibgolite) 
