@@ -46,6 +46,8 @@
     "classes": [
       "active",
       "alert",
+      "alert-danger",
+      "alert-dismissible",
       "alert-info",
       "align-items-center",
       "align-middle",
@@ -147,6 +149,7 @@
       "fa-share-nodes",
       "fa-sort",
       "fa-sun",
+      "fa-triangle-exclamation",
       "fa-up-right-from-square",
       "fa-whatsapp",
       "fa-wrapper",

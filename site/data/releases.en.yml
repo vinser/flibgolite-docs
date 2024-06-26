@@ -1,6 +1,16 @@
 # This file holds all entries for the release timeline
 
 
+- title: Major update to reduce indexing time and other enhancements
+  icon: fas flag
+  color: primary
+  date: 2024-06-26
+  badge: v2.0.0
+  url: v2.0.0
+  content:
+    Indexing time has been significantly reduced by parsing XML streams of fb2 files and fb2 archives, as well as parallel batch processing of parsed book files.
+    The full-text search for books and authors has also been improved, a simple check for duplicate books has been added, author parsing has been improved, and a number of errors have been fixed.
+
 - title: Enhancement in book stock directory structure
   icon: fas screwdriver-wrench
   color: secondary
