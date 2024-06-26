@@ -3,7 +3,7 @@ copyright = "© 2024 Serguei Vine"
 paginate = 9
 enableGitInfo = true
 
-baseURL = "https://vinser.github.io/flibgolite/"
+baseURL = "https://vinser.github.io/flibgolite-docs/"
 canonifyURLs = false
 enableEmoji = true
 enableRobotsTXT = true
