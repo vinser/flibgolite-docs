@@ -66,14 +66,14 @@ sudo ./flibgolite -service start      #Start FLibGoLite service
 
 ### _1. Main configuration file_
 
-Selfexplanatory configuration file `config.yml` with folder tree is created at the first programm run. This file is stored in the `config` subfolder of the program location. For advanced sutup you can edit it.  
+Selfexplanatory configuration file `config.yml` with folder tree is created at the first program run. This file is stored in the `config` subfolder of the program location. For advanced setup you can edit it.  
 Default content is as follows:
 {{< file path="./assets/files/config.yml" id="flibgolite-config" full="false" show="false" >}}
 
 ### _2. Setting folders location_
 
 To change location of a folder just edit corresponding line in `config.yml`
-For example, if you need to setup separate folder for new aquired books uncomment line  
+For example, if you need to setup separate folder for new acquired books uncomment line  
 ```yml
 NEW: "books/new"
 ``` 
@@ -109,7 +109,7 @@ For additional localization there are several simple settings.
 ACCEPTED: "en, ru, uk"
 ```  
 
-4.2. By default bookreader will show menues and comments in English `"en"` If you want in Russian or Ukranian you can change this setting to `"ru"` or `"uk`" 
+4.2. By default bookreader will show menus and comments in English `"en"` If you want in Russian or Ukrainian you can change this setting to `"ru"` or `"uk`" 
 
 ```yml
 # Default english locale for opds feeds (bookreaders opds menu tree) can be changed to:
@@ -118,14 +118,14 @@ ACCEPTED: "en, ru, uk"
 DEFAULT: "en"
 ```
 
-4.3. If your native language is other then three mentioned above for your convinience you can make language file and put it in `config/locales` folder  
+4.3. If your native language is other then three mentioned above for your convenience you can make language file and put it in `config/locales` folder  
 
 ```yml
 # Locales folder. You can add your own locale file there like en.yml, ru.yml, uk.yml
 DIR: "config/locales"
 ```
 
-For example, for German, copy `en.yml` to `de.yml` and translate the phrases into German to the right of the colon separator. Leave `%d` format symbols untouchced. Something like this:  
+For example, for German, copy `en.yml` to `de.yml` and translate the phrases into German to the right of the colon separator. Leave `%d` format symbols untouched. Something like this:  
 
 ```yml
 Found authors - %d: Autoren gefunden - %d
@@ -194,7 +194,7 @@ As an option you may run program in [docker container](docs/docker.md).
 
 ### _8. Build from sources_
 
-If you have any security doubts about prebuilded executables or there is no suitable one for your hardware and OS you may easily build it yourself.    
+If you have any security doubts about prebuilt executables or there is no suitable one for your hardware and OS you may easily build it yourself.    
 To build an executable install [Go](https://go.dev/dl/), [Git](https://git-scm.com/downloads), clone [FLibGoLite repository](https://github.com/vinser/flibgolite) and run
 ```console
 go build ./cmd/flibgolite
