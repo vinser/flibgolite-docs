@@ -1,4 +1,3 @@
-
 library:
   # Book folders
   STOCK: "books/stock" # Book stock
@@ -7,15 +6,13 @@ library:
 
 genres:
   TREE_FILE: "config/genres.xml"
-  # Alternative genres tree can be used (Russian only, sorry) 
-  # TREE_FILE: "config/alt_genres.xml"
-  
+ 
 database:
   DSN: "dbdata/books.db"
   # Delay before start each new acquisitions processing
-  POLL_DELAY: 5
-  # Maximum simultaneous new aquisitios processing threads
-  MAX_SCAN_THREADS: 30
+  POLL_DELAY: 30 
+  # Maximum simultaneous new acquisitions processing threads
+  MAX_SCAN_THREADS: 10
 
 logs:
   # Logs are here
@@ -23,7 +20,7 @@ logs:
   OPDS: "logs/opds.log"
   SCAN: "logs/scan.log"
   # Logging levels: D - debug, I - info, W - warnings (default), E - errors
-  LEVEL: "I" 
+  LEVEL: "W" 
 
 opds:
   # OPDS-server port so opds can be found at http://<server name or IP-address or localhost>:8085/opds
