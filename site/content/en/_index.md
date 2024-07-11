@@ -1,6 +1,6 @@
 ---
 author: Serguei Vine
-title: Let's clean up!
+title: Let's tidy up!
 description: FLibGoLite is your home cloud library and more
 thumbnail: 
     url: /img/booksboy-background.jpg
