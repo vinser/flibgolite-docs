@@ -102,14 +102,14 @@ Do not set this value more than default. With lower values it updates faster.
 
 For additional localization there are several simple settings.
 
-4.1. By default new books processing is limited to English, Russian and Ukrainian books. You can add [others](https://en.wikipedia.org/wiki/IETF_language_tag) like `"de"`, `"fr"`, `"it"` and so on.  
+4.1. By default new books processing is limited to English, Russian and Ukrainian books. You can expand this list by adding the necessary {{< link ietf_language_tags >}}IETF tags{{< /link >}}, such as `de`, `fr`, `it`, etc.  
 
 ```yml
 # Accept only these languages publications. Add others if needed please.
 ACCEPTED: "en, ru, uk"
 ```  
 
-4.2. By default bookreader will show menus and comments in English `"en"` If you want in Russian or Ukrainian you can change this setting to `"ru"` or `"uk`" 
+4.2. By default bookreader will show menus and comments in English `en` If you want in Russian or Ukrainian you can change this setting to `ru` or `uk` 
 
 ```yml
 # Default english locale for opds feeds (bookreaders opds menu tree) can be changed to:
@@ -188,23 +188,8 @@ You can setup logging level (verbosity) to one of: `D` - debug, `I` - info, `W` 
 LEVEL: "W" 
 ```
 
-### _7. Run in Docker container_
-
-As an option you may run program in [docker container](docs/docker.md).
-
-### _8. Build from sources_
-
-If you have any security doubts about prebuilt executables or there is no suitable one for your hardware and OS you may easily build it yourself.    
-To build an executable install [Go](https://go.dev/dl/), [Git](https://git-scm.com/downloads), clone [FLibGoLite repository](https://github.com/vinser/flibgolite) and run
-```console
-go build ./cmd/flibgolite
-```  
-It's better to build it on the host the service will run. You will get executable right for the host OS and hardware.    
-  
-For crosscompile install GNU `make` and run it with Makefile
-
 -------------------------------
-___*Suggestions, bug reports and comments are welcome [here](https://github.com/vinser/flibgolite/issues)*___
+___*Suggestions, bug reports and comments are welcome {{< link repository_issues >}}here{{< /link >}}*___
 
    
 

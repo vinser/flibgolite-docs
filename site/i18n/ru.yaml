@@ -10,9 +10,9 @@
 - id: words
   translation: "слов"
 - id: photoFull
-  translation: "Снимок %s на %s"
+  translation: "Фото %s на %s"
 - id: photoShort
-  translation: "Снимок {{ . }}"
+  translation: "Фото {{ . }}"
 - id: photoOn
   translation: "на"
 - id: draft

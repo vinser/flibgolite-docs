@@ -16,6 +16,8 @@ __FLibGoLite__ — це простий у використанні легкий 
 
 __FLibGoLite__ є мультиплатформним і може працювати на Windows, MacOs та Linux. Він використовує базу даних SQLite для індексу пошуку книг.
 
-Поточна версія __FLibGoLite__ `{{% latest %}}` підтримує формат публікацій [EPUB](https://en.wikipedia.org/wiki/EPUB) та [FB2 (окремі файли та zip-архіви)](https://github.com/gribuser/fb2).
+__FLibGoLite__ підтримує формат публікацій [EPUB](https://en.wikipedia.org/wiki/EPUB) та [FB2 (окремі файли та zip-архіви)](https://github.com/gribuser/fb2).
 
-Каталог __FLibGoLite__ OPDS протестований та працює з мобільними програмами для читання книг __PocketBook Reader__, __FBReader__, __Librera Reader__, __Cool Reader__, а також настільними програмами __Foliate__ та __Thorium Reader__. Ви можете використовувати будь-які інші програми або пристрої e-ink, які можуть читати перелічені формати книг і працювати з каталогами OPDS.
+Каталог __FLibGoLite__ OPDS протестований та працює з мобільними програмами для читання книг __PocketBook Reader__, __FBReader__, __Librera Reader__, __Cool Reader__, а також настільними програмами __Foliate__ та __Thorium Reader__. Ви можете використовувати будь-які інші програми або пристрої e-ink, які можуть читати перелічені формати книг і працювати з каталогами OPDS.  
+
+__Поточний стабільний випуск - [{{% latest %}}]({{<ref releases >}})__

@@ -25,7 +25,8 @@
     github = "https://github.com/vinser/flibgolite"
     release = "https://github.com/vinser/flibgolite/releases/tag/"
     checkVersion = false
-
+    showDocTOCTitle = true
+    
 [home]
     sections = ["dummy"]
     fullCover = true
@@ -146,15 +147,15 @@
     themeFontPreload = "/fonts/inter-v12-latin-regular.woff2"
     fontSizeBase = "1rem"
 
-# [schema]
-#     type = "Organization"
-#     name = "FLibGoLite"
-#     locale = "en-US"
-#     github = "https://github.com/vinser/flibgolite"
-#     section = "dosc"
-#     [author]
-#         name = "Serguei Vine"
-#         github = "https://github.com/vinser"
+[schema]
+    type = "Person"
+    name = "FLibGoLite"
+    locale = "en-US"
+    github = "https://github.com/vinser/flibgolite"
+    section = "dosc"
+    [author]
+        name = "Serguei Vine"
+        github = "https://github.com/vinser"
 #     [logo]
 #         url = "img/logo512x512.png"
 #         width = 512
@@ -169,5 +170,10 @@
     locale = "en_US"
 
 [links]
+    repository = "https://github.com/vinser/flibgolite/"
     repository_tag = "https://github.com/vinser/flibgolite/releases/tag/"
     repository_releases = "https://github.com/vinser/flibgolite/releases/"
+    repository_issues = "https://github.com/vinser/flibgolite/issues/"
+    ietf_language_tags = "https://en.wikipedia.org/wiki/IETF_language_tag"
+    golang_install = "https://go.dev/doc/install"
+    git_install = "https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"

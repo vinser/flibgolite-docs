@@ -6,8 +6,8 @@ thumbnail:
     url: /img/booksboy-background.jpg
     author: Brian Wangenheim
     authorURL: https://unsplash.com/@brianwangenheim
-    origin: https://unsplash.com/photos/TWXrALyoUfQ
-    originName: Unsplash
+    origin: Unsplash
+    originURL: https://unsplash.com/photos/TWXrALyoUfQ
 actions:
     getstarted:
         url: "docs/вступ"

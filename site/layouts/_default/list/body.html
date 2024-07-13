@@ -3,7 +3,7 @@
 {{- $breakpoint := $.Scratch.Get "breakpoint" -}}
 {{- $layout := .Params.layout -}}
 
-{{/* Remove home page sections in case if not defined in Page.Params */}}
+{{/* SV Remove home page sections in case if not defined in Page.Params */}}
 {{ if .IsHome }}
     {{- if and (eq (len site.Params.home.sections) 1) (eq (index site.Params.home.sections 0) "dummy") -}}
         {{- $sections = first 0 $sections -}}
