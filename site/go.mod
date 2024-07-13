@@ -1,5 +1,5 @@
-module vinser.github.io/hugo-hinode
+module vinser.github.io/flibgolite-docs
 
-go 1.22.4
+go 1.22.5
 
-require github.com/gethinode/hinode v0.24.8 // indirect
+require github.com/gethinode/hinode v0.24.12 // indirect
