@@ -27,3 +27,6 @@
 
 - id: yaml
   long: "Yet Another Markup Language"
+
+- id: opds
+  long: "Open Publication Distribution System"
