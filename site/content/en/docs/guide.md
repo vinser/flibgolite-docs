@@ -6,11 +6,11 @@ date: 2024-06-12
 slug: user-guide
 layout: docs
 ---
-__FLibGoLite__ program is written in GO as a single executable and doesn't require any prereqiusites.  
+__FLibGoLite__ program is written in GO as a single executable and doesn't require any prerequisites.  
 __All you have to do is to download, install and start it.__
 
 ##  Download
-[Download latest release](https://github.com/vinser/flibgolite/releases/tag/v2.0.0) of specific program build for your OS and CPU type  
+Download {{< latest-url >}}current release {{</* latest-tag */>}}{{< /latest-url >}} of specific program build for your OS and CPU type  
 {{< table class="table-striped" >}}
 |OS      |CPU type              |Program executable          |Tested {{</* sup 1 */>}}|
 |--------|----------------------|----------------------------|:------:|  
@@ -28,10 +28,10 @@ You may rename downloaded program executable to `flibgolite` or any other name y
 Place the executable `flibgolite` in any folder where you have read, write and execute permissions.
 
 ## Install and start
-Although __FLibGoLite__ program can be run from command line, the preferred setup is program to be installed as a system service running in background that will automaticaly start after power on or reboot.
+Although __FLibGoLite__ program can be run from command line, the preferred setup is program to be installed as a system service running in background that will automatically start after power on or reboot.
 
 Before use, you need to complete three steps: __install__, __start__, and __check the status__ of the service.  
-Service installation and control requires administrator priveleges.   
+Service installation and control requires administrator privileges.   
 
 {{< nav id="links-1" type="tabs" fade="true" >}}
 {{< nav-item header="OS:" disabled=true />}}
@@ -72,17 +72,19 @@ At the first run program will create the set of subfolders in the folder where p
 ```console
 flibgolite
 ├─ books  
-|  ├─ stock - library book files and archives are stored here
-|  └─ trash - files with processing errors will go here
-├─ config - contains main configuration file config.yml and genre tree file
-|  └─ locales - subfolder for localization files 
-├─ dbdata - database with book index resides here
-└─ logs - scan and opds rotating logs are here
+|  ├─ stock     - library book files and archives are stored here
+|  └─ trash     - files with processing errors will go here
+├─ config       - contains main configuration file config.yml and genre tree file
+|  └─ locales   - subfolder for localization files 
+├─ dbdata       - database with book index resides here
+└─ logs         - scan and opds rotating logs are here
+
 ```
-Put your book files or book file zip archives in `books/stock` folder and start to setup bookreader. Meanwhile book descriptions will be added to book index of OPDS-catalog.
+
+Put your book files or book file zip-archives in `books/stock` folder and start to setup bookreader. Meanwhile book descriptions will be added to book index of OPDS-catalog.
 
 Set bookreader opds-catalog url to `http://<PC_name or PC_IP_address>:8085/opds` to choose and download books on your device to read. See bookreader manual/help.
 
 {{< alert type="info" >}}
-While searching book in bookreader use native keyboard layout for choosed language to fill search pattern. For example, don't use Latin English "i" instead of Cyrillic Ukrainian "i", because it's not the same Unicode symbol. 
+While searching book in bookreader use native keyboard layout for chosen language to fill search pattern. For example, don't use Latin English "i" instead of Cyrillic Ukrainian "i", because it's not the same Unicode symbol. 
 {{< /alert >}}

@@ -1,7 +1,7 @@
 ---
 author: Serguei Vine
 title: Releases
-metadata: none
+metadata: original
 date: 2024-06-24
 description: A chronological overview of key releases since the initial launch of FLibGoLite.
 ---

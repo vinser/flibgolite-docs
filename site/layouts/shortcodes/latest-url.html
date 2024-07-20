@@ -1,0 +1,14 @@
+
+<!-- Initialize arguments -->
+{{ $url := "" }}
+{{ $class := "" }}
+{{ $case := true }}
+{{ $external := false }}
+{{ $cue := site.Params.main.externalLinks.cue }}
+{{ $tab := site.Params.main.externalLinks.tab }}
+{{ $text := trim .Inner " \r\n" | .Page.RenderString | safeHTML }}
+
+{{ $url = urls.JoinPath site.Params.links.repository_tag site.Params.docs.latestTag }}
+
+<!-- Main code -->
+{{ partial "assets/link.html" (dict "destination" $url "text" $text "cue" $cue "tab" $tab "case" $case "external" $external "class" $class "page" .Page) }}

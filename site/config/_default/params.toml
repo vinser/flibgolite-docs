@@ -20,7 +20,7 @@
     purgeHTMLComments = false
 
 [docs]
-    latest = "2.0.0"
+    latestTag = "v2.0.0"
     basePath = "assets/files"
     github = "https://github.com/vinser/flibgolite"
     release = "https://github.com/vinser/flibgolite/releases/tag/"
@@ -174,9 +174,11 @@
     repository_tag = "https://github.com/vinser/flibgolite/releases/tag/"
     repository_releases = "https://github.com/vinser/flibgolite/releases/"
     repository_issues = "https://github.com/vinser/flibgolite/issues/"
+    golang_install = "https://go.dev/doc/install"
+    git_install = "https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+    sqlite_home = "https://sqlite.org/"
     wiki_opds = "https://en.wikipedia.org/wiki/Open_Publication_Distribution_System"
     wiki_epub = "https://en.wikipedia.org/wiki/EPUB"
     wiki_fb2 = "https://en.wikipedia.org/wiki/FictionBook"
     ietf_language_tags = "https://en.wikipedia.org/wiki/IETF_language_tag"
-    golang_install = "https://go.dev/doc/install"
-    git_install = "https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+    project_gutenberg = "https://www.gutenberg.org/"

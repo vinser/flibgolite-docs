@@ -1,5 +1,6 @@
+{{/* SV Customize Footer */}}
 {{- $copyright := printf "%s © %s %s %s." (T "copyright") (dateFormat "2006" now) .Site.Title (T "rights") }}
-{{- $version := partial "latest.html" -}}
+{{- $version := partial "latest-tag.html" -}}
 {{- $license := .Site.Params.footer.license | safeHTML -}}
 {{- $description := .Site.Params.main.description | safeHTML -}}
 {{- $title := site.Title -}}

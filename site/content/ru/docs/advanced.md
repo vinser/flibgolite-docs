@@ -10,30 +10,63 @@ layout: docs
 ## Расширенное использование
 Чтобы просмотреть параметры запуска, в командной строке наберите `./flibgolite -help`
 ```console
-Usage: flibgolite [OPTION] [data directory]
+Использование: flibgolite [ПАРАМЕТР] [каталог данных]
 
-With no OPTION program will run in console mode (Ctrl+C to exit)
-Caution: Only one OPTION can be used at a time
+Без ПАРАМЕТРОВ программа будет работать в консольном режиме (Ctrl+C для выхода)
+Внимание: одновременно можно использовать только один ПАРАМЕТР.
 
-OPTION should be one of:
-  -service [action]     control FLibGoLite system service
-          where action is one of: install, start, stop, restart, uninstall, status 
-  -reindex              empty book stock index and then scan book stock directory to add books to index (database)
-  -config               create default config file in ./config folder for customization and exit
-  -help                 display this help and exit
-  -version              output version information and exit
+ПАРАМЕТР должен быть одним из:
+ -service [действие] - управление системным сервисом FLibGoLite
+    где действие одно из: 
+      install (установить), 
+      start (запустить),
+      stop (остановить), 
+      restart (перезапустить), 
+      uninstall (удалить), 
+      status (статус)
+ -reindex - очистить каталог, а затем сканировать папку с книгами, чтобы заново добавить книги в базу данных
+ -config - создать файл конфигурации по умолчанию в папке ./config для настройки
+ -help - отобразить эту справку
+ -version - вывести информацию о версии
 
-data directory is optional (current directory by default)
-```
+каталог данных - не является обязательным (по умолчанию это текущий каталог)
+ ```
 
 Примеры:
+{{< nav id="tabs-1" type="tabs" fade="true" >}}
+{{< nav-item header="OS:" disabled=true />}}
 
-```console
-./flibgolite                          Запустить FLibGoLite в консольном режиме.
+{{< nav-item header="Windows" show="true" >}}
+Откройте Powershell от имени администратора и выполняйте команды
+{{</* command prompt="PS C:\Users\User\flibgolite>" shell="powershell" */>}}
+flibgolite                     ##Запустить FLibGoLite в консольном режиме
 
-sudo ./flibgolite -service install    Установить FLibGoLite как системную службу.
-sudo ./flibgolite -service start      Запустить сервис FLibGoLite
-```
+flibgolite -service install    ##Установить FLibGoLite как системную службу
+flibgolite -service start      ##Запустить службу FLibGoLite	
+{{</* /command */>}}
+
+{{< /nav-item >}}
+{{< nav-item header="macOS" >}}
+Откройте терминал и выполняйте команды, используя `sudo`
+{{</* command user="user" host="localhost" */>}}
+./flibgolite                          ##Запустить FLibGoLite в консольном режиме
+
+sudo ./flibgolite -service install    ##Установить FLibGoLite как системную службу
+sudo ./flibgolite -service start      ##Запустить службу FLibGoLite	
+{{</* /command */>}}
+
+{{< /nav-item >}}
+{{< nav-item header="Linux" >}}
+Откройте терминал и выполняйте команды, используя `sudo`
+{{</* command user="user" host="localhost" */>}}
+./flibgolite                          ##Запустить FLibGoLite в консольном режиме
+
+sudo ./flibgolite -service install    ##Установить FLibGoLite как системную службу
+sudo ./flibgolite -service start      ##Запустить службу FLibGoLite	
+{{</* /command */>}}
+
+{{< /nav-item >}}
+{{< /nav >}}
 
 ## Тонкая настройка
 
@@ -91,22 +124,89 @@ DEFAULT: "en"
 
 ### _5. База данных перечня книг_
 
-Перечень книг хранится в файле базы данных SQLite, расположенном в папке dbdata. Он создается при первом запуске программы и __не предназначен для ручного редактирования__
+5.1. Перечень книг хранится в файле `books.db` базы данных SQLite, расположенном в папке `dbdata`.
 ```yml
 DSN: "dbdata/books.db"
 ```
-В случае его потери или повреждения он может быть восстанолен командой
-```console
-sudo ./flibgolite -reindex
+{{ < alert type="danger" > }}
+  Файл базы данных создается при первом запуске программы и __не предназначен для ручного редактирования__
+{{ < /alert > }}
+
+5.2. В случае утраты или повреждения файл базы данных может быть восстановлен командой
+{{< nav id="tabs-2" type="tabs" fade="true" >}}
+
+{{< nav-item header="OS:" disabled=true />}}
+
+{{< nav-item header="Windows" show="true" >}}
+  Откройте Powershell от имени администратора и выполните команду
+  {{</* command prompt="PS C:\Users\User\flibgolite>" shell="powershell" */>}}
+    flibgolite -reindex  
+  {{</* /command */>}}
+{{< /nav-item >}}
+
+{{< nav-item header="macOS" >}}
+  Откройте терминал и выполните команду, используя `sudo`
+  {{</* command user="user" host="localhost" */>}}
+    sudo ./flibgolite -reindex
+  {{</* /command */>}}
+{{< /nav-item >}}
+
+{{< nav-item header="Linux" >}}
+  Откройте терминал и выполните команду, используя `sudo`
+  {{</* command user="user" host="localhost" */>}}
+    sudo ./flibgolite -reindex
+  {{</* /command */>}}
+{{< /nav-item >}}
+
+{{< /nav >}}
+
+Это может занять некоторое время.
+
+5.3. Процесс регистрации новых поступлений изображен на диаграмме
+```goat
+ .----------------------+
+| STOCK folder scanning |
++------+---------------'
+       |
+       v                                                                                              
++-----------------------+
+| Scan every 30 seconds |
++------+----------------+
+       |                                                                                              
+       v                                                                                           .---------. 
+       |   +----------------------+       .-------------------+      +---------------------+      |           |   
+       +-->| Parallel EPUB parser +--+-->| Parsed books queue +----->| Bulked Tx worker    +----->|'---------'|
+       |   +----------------------+  |   |--------------------|      |---------------------|      |           |
+       |                             |   | max 1000 books     |      | max 1000 at a time  |      | SQLite DB |
+       |                             |   +-------------------'       +---------------------+      |           |
+       |                             |               ^                                             '---------' 
+       |   +----------------------+  |               |                                                
+       +-->| Parallel FB2 parser  +--+   +-----------+---------+
+       |   +----------------------+      | parallel FB2 parser |
+       |                                 |---------------------|
+       |                                 |    10 workers       |
+       |                                 +---------------------+
+       |                                             ^ 
+       |                                             |  
+       |   +----------------------+       .----------+---------+
+       +-->| Unzip FB2 zip-archive|----->| Unziped files queue |
+           +----------------------+      |---------------------|
+                                         | max 1000 files      | 
+                                         +--------------------'
+       
 ```
-Ее выполнение может занять некоторое время.
-Перед выполнением команды восстановления необходимо остановить сервис
-```console
-sudo ./flibgolite -service stop
-```
-и после восстановления снова запустить
-```console
-sudo ./flibgolite -service start
+В большинстве случаев процесс регистрации поступлений не требует настройки, поскольку его скорость определяется в основном производительностью системы ввода-вывода (контроллерами, типами дисков и т.п.). При необходимости изменить работу процесса можно следующими настройками: 
+```yml
+ # Delay before start each new acquisitions folder processing
+  POLL_DELAY: 30
+  # Maximum parallel new acquisitions processing routines
+  MAX_SCAN_THREADS: 10
+  # Book queue size
+  BOOK_QUEUE_SIZE: 1000
+  # File queue size
+  FILE_QUEUE_SIZE: 1000
+  # Maximum number of books in one transaction
+  MAX_BOOKS_IN_TX: 1000
 ```
 
 ### _6. Ведение журнала_

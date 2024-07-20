@@ -27,46 +27,46 @@ data directory is optional (current directory by default)
 ```
 
 Examples:
-{{< nav id="links-1" type="tabs" fade="true" >}}
-{{< nav-item header="OS:" disabled=true />}}
+{{< nav id="tabs-1" type="tabs" fade="true" >}}
+  {{< nav-item header="OS:" disabled=true />}}
 
-{{< nav-item header="Windows" show="true" >}}
-Open Powershell as Administrator and run commands
-{{</* command prompt="PS C:\Users\User\flibgolite>" shell="powershell" */>}}
-flibgolite                     ##Run FLibGoLite in console mode
+  {{< nav-item header="Windows" show="true" >}}
+    Open Powershell as Administrator and run commands
+    {{</* command prompt="PS C:\Users\User\flibgolite>" shell="powershell" */>}}
+      flibgolite                     ##Run FLibGoLite in console mode
 
-flibgolite -service install    ##Install FLibGoLite as a system service
-flibgolite -service start      ##Start FLibGoLite service	
-{{</* /command */>}}
+      flibgolite -service install    ##Install FLibGoLite as a system service
+      flibgolite -service start      ##Start FLibGoLite service	
+    {{</* /command */>}}
+  {{< /nav-item >}}
 
-{{< /nav-item >}}
-{{< nav-item header="macOS" >}}
-Open terminal and run commands using `sudo`:
-{{</* command user="user" host="localhost" */>}}
-./flibgolite                          #Run FLibGoLite in console mode
+  {{< nav-item header="macOS" >}}
+    Open terminal and run commands using `sudo`
+    {{</* command user="user" host="localhost" */>}}
+      ./flibgolite                          ##Run FLibGoLite in console mode
 
-sudo ./flibgolite -service install    #Install FLibGoLite as a system service
-sudo ./flibgolite -service start      #Start FLibGoLite service	
-{{</* /command */>}}
+      sudo ./flibgolite -service install    ##Install FLibGoLite as a system service
+      sudo ./flibgolite -service start      ##Start FLibGoLite service	
+    {{</* /command */>}}
+  {{< /nav-item >}}
 
-{{< /nav-item >}}
-{{< nav-item header="Linux" >}}
-Open terminal and run commands using `sudo`:
-{{</* command user="user" host="localhost" */>}}
-./flibgolite                          #Run FLibGoLite in console mode
+  {{< nav-item header="Linux" >}}
+    Open terminal and run commands using `sudo`
+    {{</* command user="user" host="localhost" */>}}
+      ./flibgolite                          ##Run FLibGoLite in console mode
 
-sudo ./flibgolite -service install    #Install FLibGoLite as a system service
-sudo ./flibgolite -service start      #Start FLibGoLite service	
-{{</* /command */>}}
+      sudo ./flibgolite -service install    ##Install FLibGoLite as a system service
+      sudo ./flibgolite -service start      ##Start FLibGoLite service	
+    {{</* /command */>}}
+  {{< /nav-item >}}
 
-{{< /nav-item >}}
 {{< /nav >}}
 
 ## Setup and fine tuning
 
 ### _1. Main configuration file_
 
-Selfexplanatory configuration file `config.yml` with folder tree is created at the first program run. This file is stored in the `config` subfolder of the program location. For advanced setup you can edit it.  
+Self-explanatory configuration file `config.yml` with folder tree is created at the first program run. This file is stored in the `config` subfolder of the program location. For advanced setup you can edit it.  
 Default content is as follows:
 {{< file path="./assets/files/config.yml" id="flibgolite-config" full="false" show="false" >}}
 
@@ -148,25 +148,90 @@ This can be done by adding language specific lines in `genres.xml` file
 <genre-descr lang="de" title="Alternative Geschichte"/>
 ```
 
-### _5. Books index database_
+### _5. Book index database_
 
-Books index is stored in SQLite database file located in `dbdata` folder. It is created at the first program run and __is not intended for manual editing__
-
+5.1. Book index is stored in SQLite database file `books.db` located in `dbdata` folder. 
 ```yml
 DSN: "dbdata/books.db"
 ```
-If it is lost or damaged, it can be restored by the command
-```console
-sudo ./flibgolite -reindex
-```
+{{< alert type="danger" >}}
+Database file is created at the first program run and __is not intended for manual editing__
+{{< /alert >}}
+
+5.2. If database file is lost or corrupted, it can be restored by reindexing the books stock folder
+{{< nav id="tabs-2" type="tabs" fade="true" >}}
+  {{< nav-item header="OS:" disabled=true />}}
+
+  {{< nav-item header="Windows" show="true" >}}
+    Open Powershell as Administrator and run command
+    {{</* command prompt="PS C:\Users\User\flibgolite>" shell="powershell" */>}}
+      flibgolite -reindex
+    {{</* /command */>}}
+  {{< /nav-item >}}
+
+  {{< nav-item header="macOS" >}}
+    Open terminal and run command using `sudo`
+    {{</* command user="user" host="localhost" */>}}
+      sudo ./flibgolite -reindex
+    {{</* /command */>}}
+  {{< /nav-item >}}
+
+  {{< nav-item header="Linux" >}}
+    Open terminal and run command using `sudo`
+    {{</* command user="user" host="localhost" */>}}
+      sudo ./flibgolite -reindex
+    {{</* /command */>}}
+  {{< /nav-item >}}
+
+{{< /nav >}}
+
 It may take some time to complete.
-Before executing the recovery command, you must stop the service
-```console
-sudo ./flibgolite -service stop
+
+5.3. The process of registering new acquisitions is presented in the diagram.
+```goat
+ .----------------------+
+| STOCK folder scanning |
++------+---------------'
+       |
+       v                                                                                              
++-----------------------+
+| Scan every 30 seconds |
++------+----------------+
+       |                                                                                              
+       v                                                                                           .---------. 
+       |   +----------------------+       .-------------------+      +---------------------+      |           |   
+       +-->| Parallel EPUB parser +--+-->| Parsed books queue +----->| Bulked Tx worker    +----->|'---------'|
+       |   +----------------------+  |   |--------------------|      |---------------------|      |           |
+       |                             |   | max 1000 books     |      | max 1000 at a time  |      | SQLite DB |
+       |                             |   +-------------------'       +---------------------+      |           |
+       |                             |               ^                                             '---------' 
+       |   +----------------------+  |               |                                                
+       +-->| Parallel FB2 parser  +--+   +-----------+---------+
+       |   +----------------------+      | parallel FB2 parser |
+       |                                 |---------------------|
+       |                                 |    10 workers       |
+       |                                 +---------------------+
+       |                                             ^ 
+       |                                             |  
+       |   +----------------------+       .----------+---------+
+       +-->| Unzip FB2 zip-archive|----->| Unziped files queue |
+           +----------------------+      |---------------------|
+                                         | max 1000 files      | 
+                                         +--------------------'
+       
 ```
-and after recovery run again
-```console
-sudo ./flibgolite -service start
+In most cases, the process of registering new acquisitions does not require configuration, since its speed is determined mainly by the performance of the input/output system (controllers, disk types, etc.). If necessary, you can change the operation of the process using the following settings:
+```yml
+ # Delay before start each new acquisitions folder processing
+  POLL_DELAY: 30 
+  # Maximum parallel new acquisitions processing routines
+  MAX_SCAN_THREADS: 10
+  # Book queue size
+  BOOK_QUEUE_SIZE: 1000
+  # File queue size
+  FILE_QUEUE_SIZE: 1000
+  # Maximum number of books in one transaction
+  MAX_BOOKS_IN_TX: 1000
 ```
 
 ### _6. Logging_
