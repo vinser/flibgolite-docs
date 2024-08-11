@@ -1,6 +1,6 @@
 [[main]]
   name = "Документація"
-  pageRef = "/docs/вступ"
+  pageRef = "docs/вступ"
   weight = 20
 
 [[main]]
