@@ -96,7 +96,14 @@ You can change the number of books your bookreader will load at a time when you 
 # OPDS feeds entries page size
 PAGE_SIZE: 30
 ```
-Do not set this value more than default. With lower values it updates faster.
+_Do not set this value more than default. With lower values it updates faster._  
+{.small}
+
+You can disable on the fly conversion of FB2 to EPUB format, just uncomment line to set NO_CONVERSION to `true`
+```yml
+# Do not convert FB2 to EPUB format
+NO_CONVERSION: true
+```
 
 ### _4. Localization tips_
 

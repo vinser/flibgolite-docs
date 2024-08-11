@@ -1,6 +1,17 @@
 # This file holds all entries for the release timeline
 
 
+- title: On the fly FB2 to EPUB 2.0 conversion
+  icon: fas screwdriver-wrench
+  color: secondary
+  date: 2024-08-11
+  badge: v2.1.0
+  url: v2.1.0
+  content:
+    An important feature of converting books from FB2 to EPUB 2.0 format has been added. The format conversion is performed on the fly when downloading a book with the reader.
+    Now the default download is EPUB format, which allows you to use readers that can work with OPDS catalogs, but do not parse FB2 (Thorium Reader, etc.).
+    Book readers that have the option to select the loading format (PocketBook, Librera, Foliate, etc.) and parse the FB2 format can download books in the original format without conversion.
+
 - title: Major update to reduce indexing time and other enhancements
   icon: fas flag
   color: primary
