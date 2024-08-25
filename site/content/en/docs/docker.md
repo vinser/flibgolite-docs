@@ -2,10 +2,11 @@
 author: Serguei Vine
 title: Using Docker
 description: Run FLibGoLite in Docker container
-date: 2024-06-12
+lastmod: 2024-06-12
 slug: using-docker
 layout: docs
 ---
+
 As an option you may run __FLibGoLite__ in `docker container`
 
 #### Build docker container

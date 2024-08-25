@@ -2,12 +2,13 @@
 author: Serguei Vine
 title: Advanced User Guide
 description: Advanced setup and fine tuning
-date: 2024-06-12
+lastmod: 2024-08-25
 slug: advanced-usage
 layout: docs
 ---
 
 ## Advanced usage
+
 From command line run `./flibgolite -help` to see run options
 ```console
 Usage: flibgolite [OPTION] [data directory]
@@ -161,9 +162,8 @@ This can be done by adding language specific lines in `genres.xml` file
 ```yml
 DSN: "dbdata/books.db"
 ```
-{{< alert type="danger" >}}
-Database file is created at the first program run and __is not intended for manual editing__
-{{< /alert >}}
+> [!CAUTION]
+> Database file is created at the first program run and __is not intended for manual editing__
 
 5.2. If database file is lost or corrupted, it can be restored by reindexing the books stock folder
 {{< nav id="tabs-2" type="tabs" fade="true" >}}

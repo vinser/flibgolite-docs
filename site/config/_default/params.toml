@@ -8,6 +8,7 @@
     footerBelowFold = true
     loading = "lazy"
     breakpoint = "md"
+    # enableLanguageSelectionStorage = true
     [main.externalLinks]
         cue = true
         tab = true
@@ -20,7 +21,7 @@
     purgeHTMLComments = false
 
 [docs]
-    latestTag = "v2.1.0"
+    latestTag = "v2.1.1"
     basePath = "assets/files"
     github = "https://github.com/vinser/flibgolite"
     release = "https://github.com/vinser/flibgolite/releases/tag/"

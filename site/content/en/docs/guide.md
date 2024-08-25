@@ -2,17 +2,20 @@
 author: Serguei Vine
 title: User Guide
 description: How to download, install and use FLibGoLite
-date: 2024-06-12
+lastmod: 2024-08-25
 slug: user-guide
 layout: docs
 ---
+
 __FLibGoLite__ program is written in GO as a single executable and doesn't require any prerequisites.  
+
 __All you have to do is to download, install and start it.__
 
 ##  Download
-Download {{< latest-url >}}current release {{</* latest-tag */>}}{{< /latest-url >}} of specific program build for your OS and CPU type  
+Download program executable of the {{< latest-url >}}current release {{</* latest-tag */>}}{{< /latest-url >}} for your OS and CPU type  
+
 {{< table class="table-striped" >}}
-|OS      |CPU type              |Program executable          |Tested {{</* sup 1 */>}}|
+|OS      |CPU type              |Program executable          |Tested[^1]|
 |--------|----------------------|----------------------------|:------:|  
 |Windows | Intel, AMD 64-bit    | flibgolite-linux-amd64.exe |Yes     |  
 |macOS   | Intel, AMD 64-bit    | flibgolite-darwin-amd64    |No      |  
@@ -21,7 +24,8 @@ Download {{< latest-url >}}current release {{</* latest-tag */>}}{{< /latest-url
 |Linux   | ARM 32-bit (armhf)   | flibgolite-linux-arm-6     |Yes     |  
 |Linux   | ARM 64-bit (armv8)   | flibgolite-linux-arm64     |Yes     |  
 {{< /table >}}
-_{{< sup 1 >}} Some of executables was only cross-builded and not tested on real computers, but you can still try them out_  
+
+_[^1]: Some of executables was only cross-builded and not tested on real computers, but you can still try them out_  
 {.small}
 
 You may rename downloaded program executable to `flibgolite` or any other name you wish. For convenience, the name `flibgolite` will be used throughout the documentation.  
@@ -85,6 +89,5 @@ Put your book files or book file zip-archives in `books/stock` folder and start 
 
 Set bookreader opds-catalog url to `http://<PC_name or PC_IP_address>:8085/opds` to choose and download books on your device to read. See bookreader manual/help.
 
-{{< alert type="info" >}}
-While searching book in bookreader use native keyboard layout for chosen language to fill search pattern. For example, don't use Latin English "i" instead of Cyrillic Ukrainian "i", because it's not the same Unicode symbol. 
-{{< /alert >}}
+> [!NOTE]
+> While searching book in bookreader use native keyboard layout for chosen language to fill search pattern. For example, don't use Latin English "i" instead of Cyrillic Ukrainian "i", because it's not the same Unicode symbol. 

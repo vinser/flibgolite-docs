@@ -2,10 +2,11 @@
 author: Serguei Vine
 title: Использование Docker
 description: Запуск FLibGoLite в контейнере Docker.
-date: 2024-06-12
+lastmod: 2024-06-12
 slug: использование-docker
 layout: docs
 ---
+
 Как вариант, вы можете запустить __FLibGoLite__ в `docker-контейнере`
 
 #### Создайте докер-контейнер

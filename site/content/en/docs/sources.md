@@ -2,11 +2,13 @@
 author: Serguei Vine
 title: Build from sources
 description: Build FLibGoLite executable from sources
-date: 2024-06-12
+lastmod: 2024-06-12
 slug: build-from-sources
 layout: docs
 ---
+
 If you have any security doubts about prebuilt executables or there is no suitable one for your hardware and OS you may easily build it yourself.    
+
 To build an executable install {{< link golang_install >}}Go{{< /link >}}, {{< link git_install >}}Git{{< /link >}}, clone {{< link repository >}}FLibGoLite repository{{< /link >}}  and run
 ```console
 go build ./cmd/flibgolite

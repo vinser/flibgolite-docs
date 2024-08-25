@@ -1,7 +1,8 @@
 {{/* SV Added Sharing */}}
 <div class="mt-5 small">
     <em>
-    {{ partial "utilities/git.html" . }}
-    {{ partial "assets/sharing.html" (dict "page" .) }}
+        {{ $lastmodstr := (partial "utilities/date.html" (dict "date" .Lastmod "format" "long")) -}}
+        {{ $lastmodstr | i18n "lastModified" }}
+        {{ partial "assets/sharing.html" (dict "page" .) }}
     </em>
 </div>

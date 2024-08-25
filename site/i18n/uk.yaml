@@ -159,3 +159,15 @@
   translation: "Шукати на цьому сайті"
 - id: ui_no_results
   translation: "Нічого не знайдено"
+
+# Alerts
+- id: note
+  translation: Примітка
+- id: tip
+  translation: Порада
+- id: important
+  translation: Важливо
+- id: warning
+  translation: Попередження
+- id: caution
+  translation: Обережно 
