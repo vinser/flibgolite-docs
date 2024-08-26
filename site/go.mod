@@ -2,4 +2,4 @@ module vinser.github.io/flibgolite-docs
 
 go 1.22.5
 
-require github.com/gethinode/hinode v0.25.7 // indirect
+require github.com/gethinode/hinode v0.26.4 // indirect

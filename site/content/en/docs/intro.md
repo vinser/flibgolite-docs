@@ -20,4 +20,4 @@ __FLibGoLite__ supports {{< link wiki_epub >}}EPUB{{< /link >}} and {{< link wik
 
 __FLibGoLite__ OPDS catalog has been tested and works with mobile book reader applications `PocketBook Reader`, `FBReader`, `Librera Reader`, `Cool Reader`, as well as desktop applications `Foliate` and `Thorium Reader`. You can use any other applications or e-ink devices that can read the listed book formats and work with OPDS catalogs.
 
-__Current stable release is [{{% latest-tag %}}]({{< ref releases >}})__
+__Current stable release is [{{% latest-tag %}}]({{% ref releases %}})__
