@@ -1,5 +1,13 @@
 # This file holds all entries for the release timeline
 
+- title: Current stable release
+  icon: fas check
+  color: secondary
+  date: 2024-08-30
+  badge: v2.1.2
+  url: v2.1.2
+  content:
+    Some bug fixes and improvements from v2.1.0
 
 - title: On the fly FB2 to EPUB 2.0 conversion
   icon: fas screwdriver-wrench

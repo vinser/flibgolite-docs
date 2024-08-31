@@ -1,5 +1,13 @@
 # This file holds all entries for the release timeline
 
+- title: Текущий стабильный выпуск
+  icon: fas check
+  color: secondary
+  date: 2024-08-30
+  badge: v2.1.2
+  url: v2.1.2
+  content:
+    Некоторые исправления ошибок и улучшения по сравнению с версией 2.1.0
 
 - title: Конвертация FB2 в EPUB 2.0 на лету
   icon: fas screwdriver-wrench
