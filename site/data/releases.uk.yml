@@ -1,7 +1,7 @@
 # This file holds all entries for the release timeline
 
 - title: Поточний стабільний випуск
-  icon: fas check
+  icon: fas bolt
   color: secondary
   date: 2024-08-30
   badge: v2.1.2
