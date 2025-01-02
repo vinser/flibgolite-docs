@@ -1,13 +1,24 @@
 # This file holds all entries for the release timeline
 
 - title: Current stable release
+  icon: fas screwdriver-wrench
+  color: secondary
+  date: 2025-01-01
+  badge: v2.2.3
+  url: v2.2.3
+  content:
+    Added Docker multi-arch image and FreeBSD prebuilt binaries for amd64, arm64, armV7 and armV6 architectures.
+
+- title: Section on recent arrivals
   icon: fas bolt
   color: secondary
-  date: 2024-08-30
-  badge: v2.1.2
-  url: v2.1.2
+  date: 2024-12-04
+  badge: v2.2.0
+  url: v2.2.0
   content:
-    Some bug fixes and improvements from v2.1.0
+    A number of features and improvements have been added, such as displaying additional information about a book, a section on recent arrivals, 
+    an option to control the level of checking for duplicate books, improved selection of the book's author. 
+    The trash folder is no longer required, and scanning of fb2 archives with a large number of books has been accelerated.
 
 - title: On the fly FB2 to EPUB 2.0 conversion
   icon: fas screwdriver-wrench

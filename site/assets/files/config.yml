@@ -1,7 +1,7 @@
 library:
   # Book folders
   STOCK: "books/stock" # Book stock
-  TRASH: "books/trash" # Error and duplicate files and archives will be moved to this folder 
+  #TRASH: "books/trash" # Error and duplicate files and archives will be moved to this folder 
   #NEW: "books/new" # Uncomment the line to have separate folder for new acquired books
 
 genres:
@@ -10,15 +10,17 @@ genres:
 database:
   DSN: "dbdata/books.db"
   # Delay before start each new acquisitions folder processing
-  POLL_DELAY: 30 
+  POLL_DELAY: 300 
   # Maximum parallel new acquisitions processing routines
   MAX_SCAN_THREADS: 10
   # Book queue size
-  BOOK_QUEUE_SIZE: 1000
+  BOOK_QUEUE_SIZE: 20000
   # File queue size
-  FILE_QUEUE_SIZE: 1000
+  FILE_QUEUE_SIZE: 20000
   # Maximum number of books in one transaction
-  MAX_BOOKS_IN_TX: 1000
+  MAX_BOOKS_IN_TX: 20000
+  # Level of checking new books for duplicates: N - no check, F - fast check (default) by CRC32, S - slow check by CRC32 or title and plot comparison
+  DEDUPLICATE_LEVEL: "F"
 
 logs:
   # Logs are here
@@ -34,9 +36,11 @@ opds:
   # OPDS-server title that is displayed in a book reader
   TITLE: "FLib Go Go Go!!!"
   # OPDS feeds entries page size
-  PAGE_SIZE: 30
-  # Do not convert FB2 to EPUB format
-  #NO_CONVERSION: true
+  PAGE_SIZE: 20
+  # Latest books period in days
+  LATEST_DAYS: 14
+  # Do not convert FB2 to EPUB format if set to true, default: false
+  NO_CONVERSION: false
 
 locales:
   # Locales folder. You can add your own locale file there like en.yml, ru.yml, uk.yml
