@@ -183,3 +183,7 @@
     wiki_fb2 = "https://en.wikipedia.org/wiki/FictionBook"
     ietf_language_tags = "https://en.wikipedia.org/wiki/IETF_language_tag"
     project_gutenberg = "https://www.gutenberg.org/"
+    docker_desktop = "https://docs.docker.com/get-docker/"
+    docker_engine = "https://docs.docker.com/engine/"
+    docker_hub = "https://hub.docker.com/repository/docker/vinser/flibgolite/general"
+    
