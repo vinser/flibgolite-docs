@@ -11,7 +11,7 @@ thumbnail:
     originURL: https://unsplash.com/photos/TWXrALyoUfQ
 actions:
     getstarted:
-        url: "docs/%D0%B2%D1%81%D1%82%D1%83%D0%BF"
+        url: "docs/вступ"
         title: "Дізнатися більше&nbsp;"
         icon: "fas book-open"
         weight: 1
