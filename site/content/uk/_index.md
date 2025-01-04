@@ -1,5 +1,6 @@
 ---
 author: Serguei Vine
+date: 2025-01-04
 title: Наведемо лад!
 description: FLibGoLite - ваша домашня хмарна бібліотека і не тільки
 thumbnail: 
@@ -10,7 +11,7 @@ thumbnail:
     originURL: https://unsplash.com/photos/TWXrALyoUfQ
 actions:
     getstarted:
-        url: "docs/вступ"
+        url: "docs/%D0%B2%D1%81%D1%82%D1%83%D0%BF"
         title: "Дізнатися більше&nbsp;"
         icon: "fas book-open"
         weight: 1
