@@ -69,6 +69,9 @@ By default, FLibGoLite adds books from the `books/stock` folder to the OPDS cata
   STOCK: "books/stock" # Book stock
 ``` 
 and change `books/stock` to the appropriate folder path.  
+>[!CAUTION]
+>In paths, use forward slash `/` instead of backslash `\`.
+
 You can also do this by creating a link to another folder on the disk where your books are located.  
 For example:
 {{< nav id="tabs-2" type="tabs" fade="true" >}}
