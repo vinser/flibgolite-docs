@@ -24,7 +24,6 @@ database:
 
 logs:
   # Logs are here
-  # To redirect the log output to console (stdout) just comment out the appropriate line OPDS or SCAN
   OPDS: "logs/opds.log"
   SCAN: "logs/scan.log"
   # Logging levels: D - debug, I - info, W - warnings (default), E - errors

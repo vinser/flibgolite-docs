@@ -12,7 +12,7 @@ Organize your cloud home library with __FLibGoLite__ and dust off e-readers
 __FLibGoLite__ is an easy-to-use lightweight home library server with OPDS catalog that you can install on your PC, NAS or server.  
 
 > [!NOTE]
-> The OPDS catalog format is a syndication format for electronic publications based on Atom and HTTP. OPDS catalogs enable the aggregation, distribution, discovery, and acquisition of electronic publications. {{< link "wiki_opds" >}}(Wikipedia){{< /link >}}
+> The OPDS catalog format (Open Publication Distribution System) is a syndication format for electronic publications based on Atom and HTTP. OPDS catalogs enable the aggregation, distribution, discovery, and acquisition of electronic publications. {{< link "wiki_opds" >}}(Wikipedia){{< /link >}}
 
 __FLibGoLite__:
 - Supports the publication format {{< link wiki_epub >}}EPUB{{< /link >}} and {{< link wiki_fb2 >}}FB2 (separate files and zip archives){{< /link >}}. It is possible to convert the FB2 format to EPUB when uploading a book to the reader.

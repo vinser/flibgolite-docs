@@ -2,14 +2,14 @@
 author: Serguei Vine
 title: Advanced User Guide
 description: Advanced setup and fine tuning
-lastmod: 2024-08-25
+lastmod: 2025-01-06
 slug: advanced-usage
 layout: docs
 ---
 
-## Advanced usage
+## Run options
 
-From command line run `./flibgolite -help` to see run options
+To view the run options, type `./flibgolite -help` at the command prompt
 ```console
 Usage: flibgolite [OPTION] [data directory]
 
@@ -29,6 +29,7 @@ data directory is optional (current directory by default)
 
 Examples:
 {{< nav id="tabs-1" type="tabs" fade="true" >}}
+
   {{< nav-item header="OS:" disabled=true />}}
 
   {{< nav-item header="Windows" show="true" >}}
@@ -41,17 +42,7 @@ Examples:
     {{</* /command */>}}
   {{< /nav-item >}}
 
-  {{< nav-item header="macOS" >}}
-    Open terminal and run commands using `sudo`
-    {{</* command user="user" host="localhost" */>}}
-      ./flibgolite                          ##Run FLibGoLite in console mode
-
-      sudo ./flibgolite -service install    ##Install FLibGoLite as a system service
-      sudo ./flibgolite -service start      ##Start FLibGoLite service	
-    {{</* /command */>}}
-  {{< /nav-item >}}
-
-  {{< nav-item header="Linux" >}}
+  {{< nav-item header="macOS, Linux, FreeBSD" >}}
     Open terminal and run commands using `sudo`
     {{</* command user="user" host="localhost" */>}}
       ./flibgolite                          ##Run FLibGoLite in console mode
@@ -63,44 +54,63 @@ Examples:
 
 {{< /nav >}}
 
-## Setup and fine tuning
+## Fine tuning
 
 ### _1. Main configuration file_
 
-Self-explanatory configuration file `config.yml` with folder tree is created at the first program run. This file is stored in the `config` subfolder of the program location. For advanced setup you can edit it.  
+Self-explanatory configuration file `config.yml` in folder tree is created at the first program run. This file is stored in the `config` subfolder of the program location. For advanced setup you can edit it.  
 Default content is as follows:
 {{< file path="./assets/files/config.yml" id="flibgolite-config" full="false" show="false" >}}
 
-### _2. Setting folders location_
+### _2. Setting book folder location_
 
-To change location of a folder just edit corresponding line in `config.yml`
-For example, if you need to setup separate folder for new acquired books uncomment line  
+By default, FLibGoLite adds books from the `books/stock` folder to the OPDS catalog and does not move them anywhere. To change the folder location, simply edit the corresponding line in `config.yml`
 ```yml
-NEW: "books/new"
+  STOCK: "books/stock" # Book stock
 ``` 
-and change `books/new` to the appropriate folder path.
+and change `books/stock` to the appropriate folder path.  
+You can also do this by creating a link to another folder on the disk where your books are located.  
+For example:
+{{< nav id="tabs-2" type="tabs" fade="true" >}}
 
+{{< nav-item header="OS:" disabled=true />}}
+
+{{< nav-item header="Windows" show="true" >}}
+Open Powershell and run the command to create a directory junction
+{{</* command prompt="PS C:\Users\User\flibgolite>" shell="powershell" */>}}
+mklink /J .\books D:\path\to\books
+{{</* /command */>}}
+{{< /nav-item >}}
+
+{{< nav-item header="macOS, Linux, FreeBSD" >}}
+Open Terminal and run the command to create a symbolic link
+{{</* command user="user" host="localhost" */>}}
+ln -s /path/to/books ./books
+{{</* /command */>}}
+{{< /nav-item >}}
+
+{{< /nav >}}
 ### _3. OPDS tuning_
 
-You can change OPDS default 8085 http port to yours 
+3.1. You can change OPDS default 8085 http port to yours 
 ```yml
 # OPDS-server port so opds can be found at http://<server name or IP-address>:8085/opds
 PORT: 8085
 ```
-Here you can set your desired OPDS server name
+3.2. Here you can set your desired OPDS server name
 ```yml
 # OPDS-server title that is displayed in a book reader
 TITLE: "FLib Go Go Go!!!"
 ```
-You can change the number of books your bookreader will load at a time when you page (pulldown/update the screen)
+3.3. You can change the number of books your bookreader will load at a time when you page (pulldown/update the screen)
 ```yml
 # OPDS feeds entries page size
-PAGE_SIZE: 30
+PAGE_SIZE: 20
 ```
-_Do not set this value more than default. With lower values it updates faster._  
-{.small}
+>[!WARNING]
+>Do not set this value significantly higher than the default. This may make page refreshing or scrolling uncomfortable.
 
-You can disable on the fly conversion of FB2 to EPUB format, just uncomment line to set NO_CONVERSION to `true`
+3.4. You can disable on the fly FB2 to EPUB format conversion when downloading books to the e-reader, just uncomment line to set NO_CONVERSION to `true`
 ```yml
 # Do not convert FB2 to EPUB format
 NO_CONVERSION: true
@@ -108,7 +118,7 @@ NO_CONVERSION: true
 
 ### _4. Localization tips_
 
-For additional localization there are several simple settings.
+For additional localization there are several possible settings.
 
 4.1. By default new books processing is limited to English, Russian and Ukrainian books. You can expand this list by adding the necessary {{< link ietf_language_tags >}}IETF tags{{< /link >}}, such as `de`, `fr`, `it`, etc.  
 
@@ -158,14 +168,14 @@ This can be done by adding language specific lines in `genres.xml` file
 
 ### _5. Book index database_
 
-5.1. Book index is stored in SQLite database file `books.db` located in `dbdata` folder. 
+5.1. Book index is stored in SQLite database files `books.db` located in `dbdata` folder. 
 ```yml
 DSN: "dbdata/books.db"
 ```
 > [!CAUTION]
-> Database file is created at the first program run and __is not intended for manual editing__
+> Database files are created at the first program run and __are not intended for manual editing__
 
-5.2. If database file is lost or corrupted, it can be restored by reindexing the books stock folder
+5.2. If database files are lost or corrupted, they can be restored by reindexing the books stock folder
 {{< nav id="tabs-2" type="tabs" fade="true" >}}
   {{< nav-item header="OS:" disabled=true />}}
 
@@ -176,14 +186,7 @@ DSN: "dbdata/books.db"
     {{</* /command */>}}
   {{< /nav-item >}}
 
-  {{< nav-item header="macOS" >}}
-    Open terminal and run command using `sudo`
-    {{</* command user="user" host="localhost" */>}}
-      sudo ./flibgolite -reindex
-    {{</* /command */>}}
-  {{< /nav-item >}}
-
-  {{< nav-item header="Linux" >}}
+  {{< nav-item header="macOS, Linux, FreeBSD" >}}
     Open terminal and run command using `sudo`
     {{</* command user="user" host="localhost" */>}}
       sudo ./flibgolite -reindex
@@ -193,6 +196,8 @@ DSN: "dbdata/books.db"
 {{< /nav >}}
 
 It may take some time to complete.
+>[!NOTE]  
+>The same can be done manually: stop the service, delete the database files and start the service again.
 
 5.3. The process of registering new acquisitions is presented in the diagram.
 ```goat
@@ -201,15 +206,15 @@ It may take some time to complete.
 +------+---------------'
        |
        v                                                                                              
-+-----------------------+
-| Scan every 30 seconds |
-+------+----------------+
++------------------------+
+| Scan every 300 seconds |
++------+-----------------+
        |                                                                                              
        v                                                                                           .---------. 
        |   +----------------------+       .-------------------+      +---------------------+      |           |   
        +-->| Parallel EPUB parser +--+-->| Parsed books queue +----->| Bulked Tx worker    +----->|'---------'|
        |   +----------------------+  |   |--------------------|      |---------------------|      |           |
-       |                             |   | max 1000 books     |      | max 1000 at a time  |      | SQLite DB |
+       |                             |   | max 20000 books    |      | max 20000 at a time |      | SQLite DB |
        |                             |   +-------------------'       +---------------------+      |           |
        |                             |               ^                                             '---------' 
        |   +----------------------+  |               |                                                
@@ -223,22 +228,22 @@ It may take some time to complete.
        |   +----------------------+       .----------+---------+
        +-->| Unzip FB2 zip-archive|----->| Unziped files queue |
            +----------------------+      |---------------------|
-                                         | max 1000 files      | 
+                                         | max 20000 files     | 
                                          +--------------------'
        
 ```
 In most cases, the process of registering new acquisitions does not require configuration, since its speed is determined mainly by the performance of the input/output system (controllers, disk types, etc.). If necessary, you can change the operation of the process using the following settings:
 ```yml
- # Delay before start each new acquisitions folder processing
-  POLL_DELAY: 30 
+  # Delay before start each new acquisitions folder processing
+  POLL_DELAY: 300 
   # Maximum parallel new acquisitions processing routines
   MAX_SCAN_THREADS: 10
   # Book queue size
-  BOOK_QUEUE_SIZE: 1000
+  BOOK_QUEUE_SIZE: 20000
   # File queue size
-  FILE_QUEUE_SIZE: 1000
+  FILE_QUEUE_SIZE: 20000
   # Maximum number of books in one transaction
-  MAX_BOOKS_IN_TX: 1000
+  MAX_BOOKS_IN_TX: 20000
 ```
 
 ### _6. Logging_
@@ -246,18 +251,23 @@ In most cases, the process of registering new acquisitions does not require conf
 While running service writes `opds.log` and `scan.log` located in `logs` folder.
 
 ```yml
-OPDS: "logs/opds.log"
-SCAN: "logs/scan.log"
+  # Logs are here
+  OPDS: "logs/opds.log"
+  SCAN: "logs/scan.log"
 ```
 `opds.log` contains records about bookreaders requests.  
 `scan.log` contains records about new books and archive indexing.  
-To redirect the log output to console (stdout) just comment out the appropriate line OPDS or SCAN.
 
 You don't need to delete logs to free up disk space, as logs are rotated (overwrite) after 7 days.
 
-You can setup logging level (verbosity) to one of: `D` - debug, `I` - info, `W` - warnings (default), `E` - errors
+You can setup logging level (verbosity) to one of: 
+- `D` - debug,
+- `I` - info,
+- `W` - warnings (default),
+- `E` - errors
 ```yml
-LEVEL: "W" 
+  # Logging levels: D - debug, I - info, W - warnings (default), E - errors
+  LEVEL: "W" 
 ```
 
 -------------------------------

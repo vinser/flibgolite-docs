@@ -2,7 +2,7 @@
 author: Serguei Vine
 title: User Guide
 description: How to download, install and use FLibGoLite
-lastmod: 2025-01-01
+lastmod: 2025-01-06
 slug: user-guide
 layout: docs
 ---
@@ -35,7 +35,7 @@ _{{< sup 1 >}} Some of executables was only cross-builded and not tested on real
 You may rename downloaded program executable to `flibgolite` or any other name you wish. For convenience, the name `flibgolite` will be used throughout the documentation.  
 Place the executable `flibgolite` in any folder where you have read, write and execute permissions.
 
-## Install and start
+## Install and startbooks/stock
 Although __FLibGoLite__ program can be run from command line, the preferred setup is program to be installed as a system service running in background that will automatically start after power on or reboot.
 
 Before use, you need to complete three steps: __install__, __start__, and __check the status__ of the service.  
@@ -80,10 +80,11 @@ flibgolite
 
 ```
 
-Put all your book files or book file zip-archives in `books/stock` folder and start to setup bookreader. Meanwhile book descriptions will be added to book index of OPDS-catalog.
+Put your book files or book file zip-archives in `books/stock` folder and start to setup your e-reader. It is possible to copy files to `books/stock` folder while the service is running. The service checks that the file is not ready yet and waits until it is copied.
 > [!WARNING]
-> Do not use subfolders in the `stock` folder. The current version of __FLibGoLite__ can use `EPUB`, `FB2` books and `zip archives with FB2` books formats only.
+> Do not use subfolders in the `stock` folder. The current version of __FLibGoLite__ can use `EPUB`, `FB2` books and `zip archives with FB2` books formats only.  
 
-Set bookreader opds-catalog url to `http://<PC_name or PC_IP_address>:8085/opds` to choose and download books on your device to read. See bookreader manual/help.
+While book descriptions are being added and become available in your OPDS catalog, you can use the e-reader's manual/instructions and configure the OPDS catalog URL on it - `http://<PC_name or PC_IP_address>:8085/opds`. After that, you will be able to select books from the catalog and download them to the e-reader.
+
 > [!NOTE]
 > While searching book in bookreader use native keyboard layout for chosen language to fill search pattern. For example, don't use Latin English "i" instead of Cyrillic Ukrainian "i", because it's not the same Unicode symbol. 
