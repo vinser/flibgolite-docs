@@ -297,6 +297,22 @@ DSN: "dbdata/books.db"
   # Logging levels: D - debug, I - info, W - warnings (default), E - errors
   LEVEL: "W" 
 ```
+### _7. Аутентифікація_
+
+Ви можете налаштувати автентифікацію на своєму сервері OPDS, встановивши метод автентифікації та низку додаткових параметрів.  
+
+Поточний випуск реалізує лише один метод автентифікації. Це базова автентифікація HTTP - автентифікація за іменем користувача та паролем.  
+
+Щоб увімкнути базову автентифікацію, ви повинні вказати метод «plain» і облікові дані «username:password» у розділі «auth» файлу «config.yml».  
+```yml
+auth:
+#   Set METHOD to plain for http basic authentication with plain text master credentials from config.yml
+  METHOD: "plain"
+#   and fill authentication credentials in plain text format username:password 
+  CREDS: "username:password"
+```
+>[!CAUTION]
+>Реалізований метод `plain` має недоліки безпеки, оскільки пароль зберігається у файлі конфігурації у вигляді відкритого тексту. Крім того, при використанні базової автентифікації поза домашньою мережею без використання протоколу https облікові дані можуть бути перехоплені зловмисниками.
 
 -------------------------------
 ___*Пропозиції, повідомлення про помилки та коментарі вітаються {{< link repository_issues >}}тут{{< /link >}}*___

@@ -281,6 +281,24 @@ You can setup logging level (verbosity) to one of:
   LEVEL: "W" 
 ```
 
+### _7. Authentication_
+
+You can set up authentication on your OPDS server by setting the authentication method and a number of additional parameters.  
+
+The current release implements only one authentication method. This is HTTP Basic authentication - authentication by username and password.    
+
+To enable Basic authentication, you must specify the `plain` method and credentials `username:password` the `auth` section of the `config.yml` file.  
+```yml
+auth:
+#   Set METHOD to plain for http basic authentication with plain text master credentials from config.yml
+  METHOD: "plain"
+#   and fill authentication credentials in plain text format username:password 
+  CREDS: "username:password"
+```
+>[!CAUTION]
+>The implemented `plain` method has security flaws because the password is stored in plaintext in the configuration file. In addition, when using basic authentication outside the home network without using the https protocol, credentials can be intercepted by attackers.  
+
+
 -------------------------------
 ___*Suggestions, bug reports and comments are welcome {{< link repository_issues >}}here{{< /link >}}*___
 
