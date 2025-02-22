@@ -3,6 +3,16 @@
 - title: Current stable release
   icon: fas screwdriver-wrench
   color: secondary
+  date: 2025-02-22
+  badge: v2.2.4
+  url: v2.2.4
+  content:
+    Added http BasicAuth authorization with plain text credentials, language information to book details view, Dockerfile for image self-building.
+    Removed display of language selection menu if there is only one localization file
+
+- title: Docker multi-arch image and FreeBSD prebuilds
+  icon: fas screwdriver-wrench
+  color: secondary
   date: 2025-01-01
   badge: v2.2.3
   url: v2.2.3
@@ -10,7 +20,7 @@
     Added Docker multi-arch image and FreeBSD prebuilt binaries for amd64, arm64, armV7 and armV6 architectures.
 
 - title: Section on recent arrivals
-  icon: fas bolt
+  icon: fas screwdriver-wrench
   color: secondary
   date: 2024-12-04
   badge: v2.2.0

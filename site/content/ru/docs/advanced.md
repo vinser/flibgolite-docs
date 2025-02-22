@@ -2,7 +2,7 @@
 author: Serguei Vine
 title: Расширенное руководство
 description: Расширенная и тонкая настройка
-lastmod: 2025-01-06
+lastmod: 2025-02-22
 slug: расширенное-руководство
 layout: docs
 ---
@@ -132,9 +132,14 @@ NO_CONVERSION: true
 
 4.1. По умолчанию обработка новых книг ограничена английскими, русскими и украинскими книгами. Вы можете расширить этот перечень добавив нужные {{< link ietf_language_tags >}}теги IETF{{< /link >}}, такие как `de`, `fr`, `it` и т. п.
 ```yml
-# Accept only these languages publications. Add others if needed please.
+# Accept only these languages publications. Add others if needed please.  Set "any" to accept any language 
 ACCEPTED: "en, ru, uk"
 ```  
+>[!NOTE]  
+>Установите значение `any`, чтобы принимать книги на любом языке.
+```yml
+ACCEPTED: "any"
+```   
 
 4.2. По умолчанию читалка будет отображать меню и комментарии на английском языке `en`, если вы хотите на русском, вы можете изменить эту настройку на `ru`.
 ```yml
@@ -142,6 +147,41 @@ ACCEPTED: "en, ru, uk"
 # "uk" for Ukrainian, 
 # "ru" for Russian 
 DEFAULT: "en"
+```
+
+Если в первом запросе к каталогу OPDS читалка отправляет заголовок `Accept-Language` с указанием языка, то запрошенный язык будет установлен как язык по умолчанию.
+
+>[!NOTE]  
+>Чтобы оставить единственный язык, можно удалить все файлы локалей в папке `config/locales`, кроме выбранного языка по умолчанию. В этом случае ридер не будет отображать меню выбора языка. См. раздел 4.3 о файлах локалей.
+
+4.3. Если ваш родной язык отличается от трех упомянутых выше, для вашего удобства вы можете создать свой собственный файл локали и поместить его в папку `config/locales`. 
+
+```yml
+# Locales folder. You can add your own locale file there like en.yml, ru.yml, uk.yml
+DIR: "config/locales"
+```
+
+Например, для немецкого языка скопируйте `en.yml` в `de.yml` и переведите фразы на немецкий язык справа от двоеточия-разделителя. Оставьте символы формата `%d` нетронутыми. Что-то вроде этого:   
+
+```yml
+Found authors - %d: Autoren gefunden - %d
+```
+
+Не забудьте заменить строку алфавита `ABC` на немецкий. Это обеспечит правильное отображение и сортировку немецких имен и названий.  
+
+4.4. Адаптацию языка выбора дерева жанров можно выполнить, отредактировав файл `genres.xml` в папке `config`
+
+```yml
+  TREE_FILE: "config/genres.xml"
+```
+
+Это можно сделать, добавив строки, специфичные для языка, в файл `genres.xml`.
+
+```xml
+<genre-descr lang="en" title="Alternative history"/>
+<genre-descr lang="ru" title="Альтернативная история"/>
+<genre-descr lang="uk" title="Альтернативна історія"/>
+<genre-descr lang="de" title="Alternative Geschichte"/>
 ```
 
 ### _5. База данных перечня книг_

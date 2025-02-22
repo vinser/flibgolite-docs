@@ -3,11 +3,22 @@
 - title: Поточний стабільний випуск
   icon: fas screwdriver-wrench
   color: secondary
+  date: 2025-02-22
+  badge: v2.2.4
+  url: v2.2.4
+  content:
+    Додана авторизація http BasicAuth з обліковими даними у вигляді простого тексту, інформація про мову для перегляду відомостей про книгу, 
+    Dockerfile для самостійного створення образу.
+    Видалено відображення меню вибору мови, якщо є лише один файл локалізації.
+
+- title: Образ Docker та двійкові файли FreeBSD
+  icon: fas screwdriver-wrench
+  color: secondary
   date: 2025-01-01
   badge: v2.2.3
   url: v2.2.3
   content:
-    Добавлены многоархитектурный образ Docker и готовые двоичные файлы FreeBSD для архитектур amd64, arm64, armV7 и armV6.
+    Додано багатоархітектурний образ Docker та готові двійкові файли FreeBSD для архітектур amd64, arm64, armV7 та armV6.
 
 - title: Розділ про останні надходження
   icon: fas bolt

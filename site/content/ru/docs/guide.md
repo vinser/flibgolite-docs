@@ -2,7 +2,7 @@
 author: Serguei Vine
 title: Руководство пользователя
 description: Как установить и использовать FLibGoLite
-lastmod: 2025-01-06
+lastmod: 2025-02-22
 slug: руководство-пользователя
 layout: docs
 ---
@@ -15,18 +15,22 @@ __Все, что вам нужно сделать, это загрузить, у
 Загрузите исполняемый файл программы {{< latest-url >}}текущей версии {{</* latest-tag */>}}{{< /latest-url >}} для вашей ОС и типа процессора.
   
 {{< table class="table-striped" >}}
-|ОС      |Процессор             |Исполняемый файл            |Протестировано {{</* sup 1 */>}}|  
-|--------|----------------------|----------------------------|:------------:|  
-|Windows | Intel, AMD 64-bit    | flibgolite-linux-amd64.exe |Да            |  
-|macOs   | Intel, AMD 64-bit    | flibgolite-darwin-amd64    |Нет           |  
-|macOS   | ARM 64-bit           | flibgolite-darwin-arm64    |Нет           |  
-|Linux   | Intel, AMD 64-bit    | flibgolite-linux-amd64     |Нет           |  
-|Linux   | ARM 32-bit (armV6)   | flibgolite-linux-arm-6     |Нет           |  
-|Linux   | ARM 32-bit (armV7)   | flibgolite-linux-arm-7     |Да            |  
-|Linux   | ARM 64-bit           | flibgolite-linux-arm64     |Да            |  
-|FreeBSD | ARM 32-bit (armV6)   | flibgolite-freebsd-arm-6   |Нет           |  
-|FreeBSD | ARM 32-bit (armV7)   | flibgolite-freebsd-arm-7   |Нет           |  
-|FreeBSD | ARM 64-bit           | flibgolite-freebsd-arm64   |Нет           |  
+|ОС      |Процессор             |Исполняемый файл            {{</* sup 1 */>}}|
+|--------|----------------------|------------------------------|  
+|Windows | Intel, AMD 64-bit    | flibgolite-windows-amd64.exe |  
+|Windows | Intel, 32-bit        | flibgolite-windows-386.exe   |  
+|macOs   | Intel, AMD 64-bit    | flibgolite-darwin-amd64      |  
+|macOS   | ARM 64-bit           | flibgolite-darwin-arm64      |  
+|Linux   | Intel, AMD 64-bit    | flibgolite-linux-amd64       |  
+|Linux   | Intel, 32-bit        | flibgolite-linux-386         |  
+|Linux   | ARM 32-bit (armV6)   | flibgolite-linux-arm-6       |  
+|Linux   | ARM 32-bit (armV7)   | flibgolite-linux-arm-7       |  
+|Linux   | ARM 64-bit           | flibgolite-linux-arm64       |  
+|FreeBSD | Intel, AMD 64-bit    | flibgolite-freebsd-amd64     |  
+|FreeBSD | Intel, 32-bit        | flibgolite-freebsd-386       |  
+|FreeBSD | ARM 32-bit (armV6)   | flibgolite-freebsd-arm-6     |  
+|FreeBSD | ARM 32-bit (armV7)   | flibgolite-freebsd-arm-7     |  
+|FreeBSD | ARM 64-bit           | flibgolite-freebsd-arm64     |  
 {{< /table >}}
 
 _{{< sup 1 >}} Некоторые исполняемые файлы были только перекрестно собраны и не тестировались на реальных компьютерах, но вы все равно можете их опробовать._  
@@ -48,9 +52,9 @@ _{{< sup 1 >}} Некоторые исполняемые файлы были т�
 {{< nav-item header="Windows" show="true" >}}
 Откройте Powershell от имени администратора и выполните команды.
 {{</* command prompt="PS C:\Users\User\flibgolite>" shell="powershell" */>}}
-  flibgolite -service install
-  flibgolite -service start
-  flibgolite -service status
+  flibgolite.exe -service install
+  flibgolite.exe -service start
+  flibgolite.exe -service status
 {{</* /command */>}}
 {{< /nav-item >}}
 

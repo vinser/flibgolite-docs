@@ -1,6 +1,17 @@
 # This file holds all entries for the release timeline
 
-- title: Текущий стабильный выпуск
+- title: Текущий стабильный релиз
+  icon: fas screwdriver-wrench
+  color: secondary
+  date: 2025-02-22
+  badge: v2.2.4
+  url: v2.2.4
+  content:
+    Добавлены ​​авторизация http BasicAuth с учетными данными в виде простого текста, информация о языке при просмотре сведений о книге, 
+    Dockerfile для самостоятельного создания образа.
+    Удалено отображение меню выбора языка, если есть только один файл локализации
+
+- title: Образ на Docker Hub и бинарники для FreeBSD
   icon: fas screwdriver-wrench
   color: secondary
   date: 2025-01-01

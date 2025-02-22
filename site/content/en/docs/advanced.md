@@ -126,9 +126,13 @@ For additional localization there are several possible settings.
 4.1. By default new books processing is limited to English, Russian and Ukrainian books. You can expand this list by adding the necessary {{< link ietf_language_tags >}}IETF tags{{< /link >}}, such as `de`, `fr`, `it`, etc.  
 
 ```yml
-# Accept only these languages publications. Add others if needed please.
+# Accept only these languages publications. Add others if needed please. Set to "any" to accept any language 
 ACCEPTED: "en, ru, uk"
 ```  
+Choose `any` to accept books in any language
+```yml
+ACCEPTED: "any"
+```   
 
 4.2. By default bookreader will show menus and comments in English `en` If you want in Russian or Ukrainian you can change this setting to `ru` or `uk` 
 
@@ -138,8 +142,12 @@ ACCEPTED: "en, ru, uk"
 # "ru" for Russian 
 DEFAULT: "en"
 ```
+If in the first request to the OPDS catalog the bookreader sends the `Accept-Language` header with the language specification, then the requested language will be set as default.
 
-4.3. If your native language is other then three mentioned above for your convenience you can make language file and put it in `config/locales` folder  
+>[!NOTE]  
+>To leave the only one language, you can delete all locale files in the `config/locales` folder except for the selected default language. In this case, the reader will not display the language selection menu. See Section 4.3 about locale files.
+
+4.3. If your native language is other then three mentioned before for your convenience you can make your own locale file and put it in `config/locales` folder.  
 
 ```yml
 # Locales folder. You can add your own locale file there like en.yml, ru.yml, uk.yml
@@ -154,13 +162,13 @@ Found authors - %d: Autoren gefunden - %d
 
 Don't forget to replace alphabet string `ABC` to German. This will ensure that German names and titles are displayed and sorted correctly.  
 
-4.4. Genres tree selection language adaptation can be done by editing the file `genres.xml` in `config` folder
+4.4. Genres tree selection language adaptation can be done by editing the file `genres.xml` in `config` folder.
 
 ```yml
   TREE_FILE: "config/genres.xml"
 ```
 
-This can be done by adding language specific lines in `genres.xml` file
+This can be done by adding language specific lines in `genres.xml` file.
 
 ```xml
 <genre-descr lang="en" title="Alternative history"/>

@@ -21,7 +21,7 @@
     purgeHTMLComments = false
 
 [docs]
-    latestTag = "v2.2.3"
+    latestTag = "v2.2.4"
     basePath = "assets/files"
     github = "https://github.com/vinser/flibgolite"
     release = "https://github.com/vinser/flibgolite/releases/tag/"

@@ -2,7 +2,7 @@
 author: Serguei Vine
 title: Розширений посібник
 description: Розширене та точне налаштування
-lastmod: 2025-01-06
+lastmod: 2025-02-22
 slug: розширений-посібник
 layout: docs
 ---
@@ -133,9 +133,14 @@ NO_CONVERSION: true
 
 4.1. За замовчуванням обробка нових книг обмежена англійськими, українськими та руськими книгами. Ви можете розширити цей перелік, додавши потрібні {{< link ietf_language_tags >}}теги IETF{{< /link >}}, такі як `de`, `fr`, `it` тощо.
 ```yml
-# Accept only these languages publications. Add others if needed please.
+# Accept only these languages publications. Add others if needed please.  Set "any" to accept any language 
 ACCEPTED: "en, ru, uk"
 ```  
+>[!NOTE]  
+>Установіть значення `any`, щоб приймати книги будь-якою мовою
+```yml
+ACCEPTED: "any"
+```   
 
 4.2. За замовчуванням читалка буде відображати меню і коментарі англійською мовою `en`. Якщо хочете українською, можете змінити цей параметр на `uk`.
 ```yml
@@ -143,6 +148,41 @@ ACCEPTED: "en, ru, uk"
 # "uk" for Ukrainian, 
 # "ru" for Russian 
 DEFAULT: "en"
+```
+
+Якщо у першому запиті до каталогу OPDS програма для читання книг надсилає заголовок `Accept-Language` із специфікацією мови, запитувана мова буде встановлена ​​за замовчуванням.
+
+>[!NOTE]  
+>Щоб залишити лише одну мову, ви можете видалити всі файли локалі в папці `config/locales`, крім вибраної мови за замовчуванням. У цьому випадку рідер не відобразить меню вибору мови. Дивіться Розділ 4.3 про файли локалі.
+
+4.3. Якщо ваша рідна мова є іншою, ніж три згадані вище, для вашої зручності ви можете створити власний файл локалі та помістити його в папку `config/locales`. 
+
+```yml
+# Locales folder. You can add your own locale file there like en.yml, ru.yml, uk.yml
+DIR: "config/locales"
+```
+
+Наприклад, для німецької мови скопіюйте `en.yml` в `de.yml` і перекладіть фрази німецькою мовою праворуч від двокрапки-роздільника. Залиште символи формату `%d` недоторканими. Щось на зразок цього: 
+
+```yml
+Found authors - %d: Autoren gefunden - %d
+```
+
+Не забудьте замінити рядок алфавіту `ABC` на німецький. Це забезпечить правильне відображення та сортування німецьких імен і назв.  
+
+4.4. Адаптацію мови вибору дерева жанрів можна здійснити шляхом редагування файлу `genres.xml` у папці `config`
+
+```yml
+  TREE_FILE: "config/genres.xml"
+```
+
+Це можна зробити, додавши рядки для певної мови у файл `genres.xml`.
+
+```xml
+<genre-descr lang="en" title="Alternative history"/>
+<genre-descr lang="ru" title="Альтернативная история"/>
+<genre-descr lang="uk" title="Альтернативна історія"/>
+<genre-descr lang="de" title="Alternative Geschichte"/>
 ```
 
 ### _5. База даних списку книг_
